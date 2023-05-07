@@ -1,0 +1,56 @@
+TEST DE PERSONALIDAD aplicando SCRUM
+
+TEMA: ¿Qué personaje de The Office eres?
+
+1. preguntas de la base de datos
+2. respuestas volcadas a una base de datos
+3. elegir entre imagenes
+
+
+Personajes:
+1-Michael Scott (wason, bromas)
+2-Dwight Schrute (paranoico, vida rural)
+3-Jim Halpert (gracioso, bromas)
+4-Pam Beesley (cuidadora, amable)
+5-Creed (fuera de lugar, misterioso)
+6-Kevin Malone (gloton, -inteligente)
+7-Andy Bernard ()
+8-Angela(dominante, recta)
+9-Stanley(pasota)
+10-Meredith(borracha)
+11-Darryl(inteligente, poca confianza)
+12-Erin (-inteligente, cute)
+13- Oscar (moda, perros)
+
+FORMAS DE PREGUNTAR
+1-Imagenes (elige una imagen)
+	Elige una casa
+		-rural
+		-Lujo
+		-Piso
+		-infantil
+	Elige un plan para el sabado 
+		-Fiesta
+		-Comer 
+		-Familia
+		-Casa solo
+2-Respuesta si/no
+	Bebes alcohol
+	Te has enamorado alguna vez
+	Alguna vez has cometido una ilegalidad
+3-Respuesta con 4 opciones
+	Elige una profesion
+		-Actor
+		-Pintor
+		-Diseño moda
+		-CEO
+	Elige un animal 
+		-Vaca
+		-Gato 
+		-Perro
+	Elige un estilo de musica
+	
+4-Barra de MuyDesacuerdo/Desacuerdo/NSNC/Deacuerdo/MuyDeacuerdo
+	Cuanto te gusta bromear
+	¿Comes vegetales?
+	¿Te gusta el arte?
