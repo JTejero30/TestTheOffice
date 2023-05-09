@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="groupid" alignment="CENTER" minHeight="400.0" minWidth="400.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hoja11cuestionario.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Label fx:id="preguntaid" text="Label" />
+   <RadioButton id="option1" fx:id="idOpcion1" mnemonicParsing="false" text="RadioButton">
+      <toggleGroup>
+         <ToggleGroup fx:id="optionsGroup" />
+      </toggleGroup>
+   </RadioButton>
+   <RadioButton id="option2" fx:id="idOpcion2" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
+   <RadioButton id="option3" fx:id="idOpcion3" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
+   <RadioButton id="option4" fx:id="idOpcion4" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
+   <Button fx:id="button" mnemonicParsing="false" onAction="#mostrarPregunta" text="Button" />
+</VBox>
