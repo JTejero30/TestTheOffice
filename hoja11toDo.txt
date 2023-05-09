@@ -18,39 +18,69 @@ Personajes:
 8-Angela(dominante, recta)
 9-Stanley(pasota)
 10-Meredith(borracha)
-11-Darryl(inteligente, poca confianza)
-12-Erin (-inteligente, cute)
-13- Oscar (moda, perros)
+11-Oscar (moda, perros)
 
 FORMAS DE PREGUNTAR
 1-Imagenes (elige una imagen)
-	Elige una casa
-		-rural
-		-Lujo
-		-Piso
-		-infantil
-	Elige un plan para el sabado 
-		-Fiesta
-		-Comer 
-		-Familia
-		-Casa solo
+	1.1.Elige una casa
+		-rural													Dwight +2
+		-Lujo													Andy +2, Oscar +1
+		-Piso														
+		-infantil												MIchael +2, Jim +1 		
+	1.2.Elige un plan para el sabado 
+		-Fiesta													Meredith+3, Michael+1, Stanley+1
+		-Comer 													Kevin +3, Oscar+1
+		-Familia												Pam +3, Jim +2, Angela+2
+		-Casa solo												Creed +2, Dwight+3, Darryl +1
+	1.3.¿Que sueles beber mientras trabajas?
+		-Cafe													Michael+2, Pam +3, Stanley+2
+		-Bebida energetica										Creed+2, andy+1		
+		-Cerveza												Meredith+3
+		-Nada, me gusta concentrarme							Dwight +3
+	1.4 ¿Que te comerias en el descanso del trabajo?
+		-Ensalada												Angela+3, Pam+2,
+		-Mesa sofisticada degustacion							Oscar+3, Pam+2, Kevin+1, Andy+1
+		-Sandwich												Jim+3, Darryl+2
+		-Algo muy gordo											Kevin+4, Darryl+2
+	1.5 3.2 Elige un animal 
+		-Vaca													Dwight+4
+		-Gato 													Angela+4
+		-Perro													Oscar+3	
 2-Respuesta si/no
-	Bebes alcohol
-	Te has enamorado alguna vez
-	Alguna vez has cometido una ilegalidad
+	2.1.Bebes alcohol											
+		-Yes													Meredith+3, Creed+2, Pam+1, Darryl+1, Andy+1
+		-No														Angela+2, Dwight +3
+	2.2.Te has enamorado alguna vez								
+		-Yes													Jim+3, Pam+3, michael+2, Andy+2
+		-No														Stanley+2, Creed+3, Dwight+2, Kevin+2, Meredith+2
+	2.3 Alguna vez has cometido una ilegalidad	
+		-Yes													Creed+3, Satnley+2, Meredith+3
+		-No														Dwight+3, Angela+3,Pam+2, Oscar+1
 3-Respuesta con 4 opciones
-	Elige una profesion
-		-Actor
-		-Pintor
-		-Diseño moda
-		-CEO
-	Elige un animal 
-		-Vaca
-		-Gato 
-		-Perro
-	Elige un estilo de musica
+	3.1 Elige una profesion
+		-Actor													Andy+4
+		-Pintor													Pam+4
+		-Diseño moda											Oscar+4
+		-CEO													Michael+4
 	
+	3.4 Como te describirian tus compañeros de trabajo
+		-Tu presencia se hace notar
+		-Una persona trabajadora 
+		-El alma de la fiesta
+		-Un poco distante y reservado
+	3.5 ¿Cómo describirías tu estilo de vestimenta?
+		a) Casual y cómodo 
+		b) Elegante y sofisticado 
+		c) Colorido y excéntrico 
+		d) No me importa mucho mi estilo de vestimenta	
+	3.6 ¿Cómo te describes en situaciones de presión o estrés?
+		a) Me mantengo calmado/a y enfocado/a - 3 puntos
+		b) Me siento abrumado/a pero puedo manejarlo - 2 puntos
+		c) Me estreso fácilmente y puedo sentirme paralizado/a - 1 punto
+		d) No se que es una situacion de estres
+		
 4-Barra de MuyDesacuerdo/Desacuerdo/NSNC/Deacuerdo/MuyDeacuerdo
-	Cuanto te gusta bromear
-	¿Comes vegetales?
-	¿Te gusta el arte?
+	4.1 Cuanto te gusta bromear
+	4.2 ¿Comes vegetales?
+	4.3 ¿Te gusta el arte?
+	4.4 ¿Cuanta libertad para autogestionarte te gusta tener en el trabajo?
