@@ -20,7 +20,15 @@ public class Transformar {
                                          String personaje1, int valor1,String personaje2, int valor2){
 
         String sql;
-        sql = "INSERT INTO `preguntas4resp` (`id`, `id_pregunta`, `respuesta`, `"+personaje1+"`) VALUES (NULL, "+id_preguntaV+", "+respuestaV+", "+valor1+") ";
+        sql = "INSERT INTO `preguntas4resp` (`id`, `id_pregunta`, `respuesta`, `"+personaje1+"`, `"+personaje2+"`) VALUES (NULL, "+id_preguntaV+", "+respuestaV+", "+valor1+", "+valor2+") ";
+        return sql;
+
+    }
+    public static String insertPregunta3(int id_preguntaV, String preguntaV, String respuestaV,
+                                         String personaje1, int valor1,String personaje2, int valor2){
+
+        String sql;
+        sql = "INSERT INTO `preguntas4resp` (`id`, `id_pregunta`, `respuesta`, `"+personaje1+"`, `"+personaje2+"`) VALUES (NULL, "+id_preguntaV+", "+respuestaV+", "+valor1+", "+valor2+") ";
         return sql;
 
     }
