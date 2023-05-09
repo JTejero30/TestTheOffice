@@ -39,7 +39,7 @@ public class HelloController {
     @FXML
 
     public void mostrarPregunta(ActionEvent event) throws ClassNotFoundException {
-        numeroPregunta++;
+        /*numeroPregunta++;
         ArrayList<String> listaResult = ContolBD.selectConsultaIncidencias(numeroPregunta);
         RadioButton selectedToogle = (RadioButton) optionsGroup.getSelectedToggle();
 
@@ -48,18 +48,18 @@ public class HelloController {
         idOpcion1.setText(listaResult.get(1));
         idOpcion2.setText(listaResult.get(2));
         idOpcion3.setText(listaResult.get(3));
-        idOpcion4.setText(listaResult.get(4));
+        idOpcion4.setText(listaResult.get(4));*/
     }
 
     public  void startController() throws ClassNotFoundException {
 
-        ArrayList<String> listaResult = ContolBD.selectConsultaIncidencias(numeroPregunta);
+       /* ArrayList<String> listaResult = ContolBD.selectConsultaIncidencias(numeroPregunta);
 
         preguntaid.setText(listaResult.get(0));
         idOpcion1.setText(listaResult.get(1));
         idOpcion2.setText(listaResult.get(2));
         idOpcion3.setText(listaResult.get(3));
-        idOpcion4.setText(listaResult.get(4));
+        idOpcion4.setText(listaResult.get(4));*/
 
     }
 }
