@@ -60,6 +60,7 @@ public class HelloController {
         idOpcion2.setText(listaResult.get(2));
         idOpcion3.setText(listaResult.get(3));
         idOpcion4.setText(listaResult.get(4));*/
+        System.out.println("hola");
 
     }
 }
