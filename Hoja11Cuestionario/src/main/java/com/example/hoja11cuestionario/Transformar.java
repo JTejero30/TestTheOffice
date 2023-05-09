@@ -12,7 +12,7 @@ public class Transformar {
                                          String personaje1, int valor1){
 
         String sql;
-        sql = "INSERT INTO `preguntas4resp` (`id`, `id_pregunta`, `respuesta`, `"+personaje1+"`) VALUES (NULL, "+id_preguntaV+", "+respuestaV+", "+valor1+") ";
+        sql = "INSERT INTO `preguntas4resp` (`id`, `id_pregunta`, `respuesta`, `"+personaje1+"`) VALUES (NULL, "+id_preguntaV+", '"+respuestaV+"', "+valor1+") ";
         return sql;
 
     }

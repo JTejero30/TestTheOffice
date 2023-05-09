@@ -53,14 +53,22 @@ public class HelloController {
 
     public  void startController() throws ClassNotFoundException {
 
-       /* ArrayList<String> listaResult = ContolBD.selectConsultaIncidencias(numeroPregunta);
+        ArrayList<String> listaResult = ContolBD.selectConsultaIncidencias(numeroPregunta);
+
+        /*preguntaid.setText(listaResult.get(0));
+        idOpcion1.setText(listaResult.get(1));
+        idOpcion2.setText(listaResult.get(2));
+        idOpcion3.setText(listaResult.get(3));
+        idOpcion4.setText(listaResult.get(4));*/
 
         preguntaid.setText(listaResult.get(0));
         idOpcion1.setText(listaResult.get(1));
         idOpcion2.setText(listaResult.get(2));
         idOpcion3.setText(listaResult.get(3));
-        idOpcion4.setText(listaResult.get(4));*/
-        System.out.println("hola");
+        idOpcion4.setText(listaResult.get(4));
+        System.out.println(ContolBD.selectConsultaIncidencias(1).toString());
 
     }
+
+
 }

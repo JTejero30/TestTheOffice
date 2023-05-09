@@ -22,7 +22,7 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) throws ClassNotFoundException {
 
-        ContolBD.ejecutar(Transformar.insertPregunta1(1,"Elige una profesión:","Actor","p_andy",4));
+       // ContolBD.ejecutar(Transformar.insertPregunta1(1,"Elige una profesión:","Actor","p_andy",4));
 
         launch();
     }
