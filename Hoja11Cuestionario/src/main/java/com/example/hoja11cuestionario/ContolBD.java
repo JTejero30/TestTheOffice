@@ -18,7 +18,7 @@ public class ContolBD {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost/actividad11BD", "root", "");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost/theoffice", "root", "");
 
             sentenciaSQL = conexion.createStatement();
 

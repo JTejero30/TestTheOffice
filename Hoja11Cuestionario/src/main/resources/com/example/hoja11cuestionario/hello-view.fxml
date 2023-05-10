@@ -6,9 +6,9 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox fx:id="groupid" alignment="CENTER" maxHeight="400.0" minHeight="400.0" minWidth="400.0" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hoja11cuestionario.HelloController">
@@ -17,31 +17,37 @@
     </padding>
    <SplitPane dividerPositions="0.5" maxHeight="370.0" minHeight="370.0" orientation="VERTICAL" prefHeight="370.0" prefWidth="160.0">
      <items>
-       <AnchorPane maxHeight="50.0" minHeight="50.0" minWidth="0.0" prefHeight="50.0" prefWidth="160.0">
+       <AnchorPane maxHeight="79.0" minHeight="50.0" minWidth="0.0" prefHeight="79.0" prefWidth="359.0">
             <children>
-               <Label fx:id="preguntaid" layoutX="14.0" layoutY="16.0" prefHeight="0.0" styleClass="Cpregunta" text="Label" />
+               <Label fx:id="preguntaid" layoutX="17.0" layoutY="24.0" maxWidth="332.0" minWidth="324.0" prefHeight="30.0" prefWidth="324.0" styleClass="Cpregunta" text="Label" />
             </children></AnchorPane>
-       <AnchorPane maxHeight="309.0" minHeight="200.0" minWidth="0.0" prefHeight="309.0" prefWidth="359.0">
+       <AnchorPane maxHeight="281.0" minHeight="200.0" minWidth="0.0" prefHeight="281.0" prefWidth="359.0">
             <children>
-               <BorderPane prefHeight="309.0" prefWidth="359.0">
-                  <center>
-                     <ToolBar maxWidth="300.0" orientation="VERTICAL" prefHeight="250.0" prefWidth="72.0" styleClass="CssRespuesta" BorderPane.alignment="CENTER">
-                        <items>
+               <BorderPane prefHeight="273.0" prefWidth="359.0">
+                  <left>
+                     <VBox prefHeight="243.0" prefWidth="357.0" spacing="35.0" styleClass="CssRespuesta" BorderPane.alignment="CENTER_LEFT">
+                        <children>
                            <RadioButton id="option1" fx:id="idOpcion1" mnemonicParsing="false" styleClass="CssRd" text="RadioButton">
                               <toggleGroup>
                                  <ToggleGroup fx:id="optionsGroup" />
-                              </toggleGroup></RadioButton>
+                              </toggleGroup>
+                           </RadioButton>
                            <RadioButton id="option2" fx:id="idOpcion2" mnemonicParsing="false" styleClass="CssRd" text="RadioButton" toggleGroup="$optionsGroup" />
                            <RadioButton id="option3" fx:id="idOpcion3" mnemonicParsing="false" styleClass="CssRd" text="RadioButton" toggleGroup="$optionsGroup" />
                            <RadioButton id="option4" fx:id="idOpcion4" mnemonicParsing="false" styleClass="CssRd" text="RadioButton" toggleGroup="$optionsGroup" />
-                        </items>
+                        </children>
                         <padding>
-                           <Insets left="30.0" top="30.0" />
+                           <Insets left="20.0" />
                         </padding>
-                     </ToolBar>
-                  </center>
+                     </VBox>
+                  </left>
                   <bottom>
-                     <Button fx:id="button" mnemonicParsing="false" onAction="#mostrarPregunta" text="Button" BorderPane.alignment="CENTER" />
+                     <HBox maxWidth="351.0" minWidth="351.0" prefHeight="30.0" prefWidth="351.0" spacing="230.0" styleClass="CssHboxButton" BorderPane.alignment="CENTER">
+                        <children>
+                           <Button fx:id="button" mnemonicParsing="false" onAction="#anteriorPregunta" styleClass="CssButton1" text="Anterior" />
+                           <Button mnemonicParsing="false" onAction="#siguientePregunta" styleClass="CssButton2" text="Siguiente" />
+                        </children>
+                     </HBox>
                   </bottom>
                </BorderPane>
             </children>

@@ -37,8 +37,39 @@ public class HelloController {
 
     @FXML
     public void mostrarPregunta(ActionEvent event) throws ClassNotFoundException {
+
+    }
+
+
+    @FXML
+    void anteriorPregunta(ActionEvent event) {
+        numeroPregunta--;
+        ArrayList<String> listaResult;
+        try {
+            listaResult = ContolBD.pintarPreguntas4(Transformar.selectRs4(numeroPregunta));
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        // RadioButton selectedToogle = (RadioButton) optionsGroup.getSelectedToggle();
+
+
+        preguntaid.setText(listaResult.get(0));
+        idOpcion1.setText(listaResult.get(1));
+        idOpcion2.setText(listaResult.get(2));
+        idOpcion3.setText(listaResult.get(3));
+        idOpcion4.setText(listaResult.get(4));
+    }
+
+    @FXML
+    void siguientePregunta(ActionEvent event)  {
         numeroPregunta++;
-        ArrayList<String> listaResult = ContolBD.pintarPreguntas4(Transformar.selectRs4(numeroPregunta));
+        ArrayList<String> listaResult;
+        try {
+            listaResult = ContolBD.pintarPreguntas4(Transformar.selectRs4(numeroPregunta));
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
         // RadioButton selectedToogle = (RadioButton) optionsGroup.getSelectedToggle();
 
@@ -53,12 +84,6 @@ public class HelloController {
     public  void startController() throws ClassNotFoundException {
 
         ArrayList<String> listaResult = ContolBD.pintarPreguntas4(Transformar.selectRs4(numeroPregunta));
-
-        /*preguntaid.setText(listaResult.get(0));
-        idOpcion1.setText(listaResult.get(1));
-        idOpcion2.setText(listaResult.get(2));
-        idOpcion3.setText(listaResult.get(3));
-        idOpcion4.setText(listaResult.get(4));*/
 
         preguntaid.setText(listaResult.get(0));
         idOpcion1.setText(listaResult.get(1));
