@@ -1,0 +1,13 @@
+.Cpregunta{
+    -fx-font-family: "JetBrains Mono ExtraBold";
+    -fx-font-size:20px;
+}
+
+.CssRespuesta{
+    -fx-alignment:center;
+   // -fx-background-color: red;
+}
+
+.CssRd{
+    -fx-alignment:center;
+}
