@@ -18,7 +18,7 @@ public class ContolBD {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost/theoffice", "root", "");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost/theoffice?useSSL=false&user=root&password=");
 
             sentenciaSQL = conexion.createStatement();
 
@@ -62,7 +62,7 @@ public class ContolBD {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost/actividad11BD", "root", "");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost/theoffice?useSSL=false&user=root&password=");
 
             sentenciaSQL = conexion.createStatement();
             resultado=sentenciaSQL.executeUpdate(sql);
