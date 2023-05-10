@@ -2,6 +2,16 @@ package com.example.hoja11cuestionario;
 
 public class Transformar {
 
+
+    public static String selectRs4 (int idPregunta){
+
+
+        String sql = "SELECT pregunta as respuesta from preguntas where id_pregunta="+idPregunta+" union select respuesta as respuesta from preguntas4resp where id_pregunta = "+idPregunta;
+
+
+        return sql ;
+    }
+
     public static String selectPregunta() {
         String sql;
         sql = "SELECT * FROM preguntas";
