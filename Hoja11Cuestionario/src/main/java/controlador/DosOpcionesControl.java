@@ -26,6 +26,15 @@ public class DosOpcionesControl {
     private Label preguntaid;
 
     @FXML
+    private ToggleButton si;
+
+    @FXML
+    private ToggleButton no;
+
+    //Aqui importante cambiarlo, que es donde empieza siempre la pregunta
+    private int numeroPregunta = 6;
+
+    @FXML
     void anteriorPregunta(ActionEvent event) throws ClassNotFoundException {
         numeroPregunta--;
         startController();
@@ -34,24 +43,18 @@ public class DosOpcionesControl {
     @FXML
     void siguientePregunta(ActionEvent event) throws ClassNotFoundException {
 
-        ContolBD.ejecutar(Transformar.insertOption(ContolBD.hacerArrayPuntuaciones(Transformar.valuesOpcion(numeroPregunta,retornaOpcion()))));
+        ContolBD.ejecutar(Transformar.insertOption(ContolBD.hacerArrayPuntuaciones(Transformar.valuesOpcion(numeroPregunta,si.isSelected()))));
+        System.out.println("hola1"+ContolBD.hacerArrayPuntuaciones(Transformar.valuesOpcion(numeroPregunta,si.isSelected())));
+        System.out.println("hola1"+ Transformar.insertOption(ContolBD.hacerArrayPuntuaciones(Transformar.valuesOpcion(numeroPregunta,si.isSelected()))));
         numeroPregunta++;
 
         startController();
 
     }
 
-    @FXML
-    private ToggleButton si;
+    public void startController()  {
 
-    @FXML
-    private ToggleButton no;
-
-    private int numeroPregunta = 6;
-
-    public void startController() throws ClassNotFoundException {
-
-        ArrayList<String> listaResult = ContolBD.hacerArrayDeConsulta(Transformar.selectRs4(numeroPregunta));
+        ArrayList<String> listaResult;
 
         try {
             listaResult = ContolBD.hacerArrayDeConsulta(Transformar.selectRs4(numeroPregunta));
@@ -66,16 +69,17 @@ public class DosOpcionesControl {
 
     }
 
+    //NO es necesario crear este método, directamente se hace el boolean en el otro metodo
     public boolean retornaOpcion(){
 
-        boolean opcion; //true= si false=no
+      /*  boolean opcion=false; //true= si false=no
         if (si.isSelected()) {
             opcion=true;
         }else {
             opcion=false;
-        }
+        }*/
 
-        return opcion;
+        return si.isSelected();
     }
 
 }

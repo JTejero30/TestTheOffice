@@ -12,7 +12,7 @@ import java.io.IOException;
 public class imagenesApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException, ClassNotFoundException {
-        FXMLLoader fxmlLoader = new FXMLLoader(imagenesApplication.class.getResource("imagenes-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(modelo.imagenesApplication.class.getResource("imagenes-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Hello!");
 

@@ -23,7 +23,7 @@ public class ContolBD {
             sentenciaSQL = conexion.createStatement();
 
 
-            System.out.println(sql);
+            //System.out.println(sql);
 
             rs = sentenciaSQL.executeQuery(sql);
 
@@ -48,16 +48,15 @@ public class ContolBD {
             }
         }
 
-        System.out.println("Conectado/desconectado");
+        //System.out.println("Conectado/desconectado");
+        //System.out.println(listaResult);
         return listaResult;
     }
 
     public static void ejecutar(String sql) throws ClassNotFoundException {
         Connection conexion = null;
         Statement sentenciaSQL = null;
-
-        ResultSet rs;
-        int resultado = 0;
+        int resultado;
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -66,8 +65,8 @@ public class ContolBD {
 
             sentenciaSQL = conexion.createStatement();
             resultado=sentenciaSQL.executeUpdate(sql);
-            System.out.println(sql);
 
+            System.out.println(sql);
 
             if (resultado >= 1) {
                 System.out.println("Se ha insertado bien.");
@@ -92,7 +91,7 @@ public class ContolBD {
             }
         }
 
-        System.out.println("Conectado/desconectado");
+        //System.out.println("Conectado/desconectado");
     }
 
     public static ArrayList<String> hacerArrayPuntuaciones(String sql) throws ClassNotFoundException {
@@ -108,7 +107,7 @@ public class ContolBD {
             sentenciaSQL = conexion.createStatement();
 
 
-            System.out.println(sql);
+           // System.out.println(sql);
 
             rs = sentenciaSQL.executeQuery(sql);
 
@@ -143,11 +142,8 @@ public class ContolBD {
             }
         }
 
-        System.out.println("Conectado/desconectado");
+      //  System.out.println("Conectado/desconectado");
         return listaResult;
     }
-
-
-
     }
 

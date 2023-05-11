@@ -59,7 +59,7 @@ public class ImagenesControl {
 
     private int numeroPregunta = 5;
 
-    private Image casaLujo=  new Image("img/casaLujo.jpg");
+    //private Image casaLujo=  new Image("img/casaLujo.jpg");
 
     public void startController() throws ClassNotFoundException {
 
@@ -72,7 +72,10 @@ public class ImagenesControl {
         }
 
         preguntaid.setText(listaResult.get(0));
+        /*
         img0.setImage(casaLujo);
+
+         */
 
     }
 

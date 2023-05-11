@@ -57,25 +57,25 @@ public class Transformar {
     }
 
     public static String valuesOpcion(int id_pregunta, boolean opcion) {
-        String sql ;
+        String sql;
 
-        if (opcion){
-            sql="SELECT p_michael , p_dwight , p_jim , p_pam , p_creed , p_kevin , p_andy , p_angela , p_stanley , p_meredith , p_oscar  FROM `preguntas4resp` WHERE id_pregunta = "+id_pregunta+" LIMIT 1;";
-        }else{
-            sql="SELECT p_michael , p_dwight , p_jim , p_pam , p_creed , p_kevin , p_andy , p_angela , p_stanley , p_meredith , p_oscar  FROM `preguntas4resp` WHERE id_pregunta= "+id_pregunta+" LIMIT 1,2;";
-
+        if (opcion) {
+            sql = "SELECT p_michael , p_dwight , p_jim , p_pam , p_creed , p_kevin , p_andy , p_angela , p_stanley , p_meredith , p_oscar  FROM `preguntas4resp` WHERE id_pregunta = " + id_pregunta + " LIMIT 1;";
+        } else {
+            sql = "SELECT p_michael , p_dwight , p_jim , p_pam , p_creed , p_kevin , p_andy , p_angela , p_stanley , p_meredith , p_oscar  FROM `preguntas4resp` WHERE id_pregunta= " + id_pregunta + " LIMIT 1,2;";
         }
-
         return sql;
     }
-    public static String insertOption(ArrayList valores){
+
+    public static String insertOption(ArrayList<String> valores) {
         String sql = "INSERT INTO `personajes` (`id`, `michael`, `dwight`, `jim`, `pam`, `creed`, `kevin`, `andy`, `angela`, `stanley`, `meredith`, `oscar`) VALUES (NULL";
-        String values= "";
+        StringBuilder values = new StringBuilder();
         // '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0')
-        for (int i = 0; i <valores.size() ; i++) {
-            values+=" ,"+valores.get(i)+" ";
+        for (int i = 0; i < valores.size(); i++) {
+            values.append(", ").append(valores.get(i)).append(" ");
         }
-        sql=sql+values+");";
+        sql = sql + values + ");";
+       // System.out.println(sql);
 
         return sql;
     }
