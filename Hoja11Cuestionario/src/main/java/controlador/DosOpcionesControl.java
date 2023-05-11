@@ -1,0 +1,65 @@
+package controlador;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.VBox;
+import modelo.Transformar;
+
+import java.util.ArrayList;
+
+public class DosOpcionesControl {
+
+    @FXML
+    private ToggleGroup YN;
+
+    @FXML
+    private Button button;
+
+    @FXML
+    private VBox groupid;
+
+    @FXML
+    private Label preguntaid;
+
+    @FXML
+    void anteriorPregunta(ActionEvent event) throws ClassNotFoundException {
+        numeroPregunta--;
+        startController();
+    }
+
+    @FXML
+    void siguientePregunta(ActionEvent event) throws ClassNotFoundException {
+        numeroPregunta++;
+        startController();
+    }
+
+    @FXML
+    private ToggleButton si;
+
+    @FXML
+    private ToggleButton no;
+
+    private int numeroPregunta = 6;
+
+    public void startController() throws ClassNotFoundException {
+
+        ArrayList<String> listaResult = ContolBD.hacerArrayPregunta(Transformar.selectRs4(numeroPregunta));
+
+        try {
+            listaResult = ContolBD.hacerArrayPregunta(Transformar.selectRs4(numeroPregunta));
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        preguntaid.setText(listaResult.get(0));
+        si.setText(listaResult.get(1));
+        no.setText(listaResult.get(2));
+
+
+    }
+
+}

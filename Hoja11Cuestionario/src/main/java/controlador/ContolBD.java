@@ -1,4 +1,4 @@
-package com.example.hoja11cuestionario;
+package controlador;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class ContolBD {
 
-    public static ArrayList<String> pintarPreguntas4(String sql) throws ClassNotFoundException {
+    public static ArrayList<String> hacerArrayPregunta(String sql) throws ClassNotFoundException {
         Connection conexion = null;
         Statement sentenciaSQL = null;
         ResultSet rs;

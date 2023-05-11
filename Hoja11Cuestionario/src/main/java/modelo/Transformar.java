@@ -1,4 +1,4 @@
-package com.example.hoja11cuestionario;
+package modelo;
 
 public class Transformar {
 

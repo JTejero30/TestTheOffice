@@ -72,7 +72,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.hoja11cuestionario/com.example.hoja11cuestionario.HelloApplication
+                            <mainClass>com.example.hoja11cuestionario/modelo.CuatroRespApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

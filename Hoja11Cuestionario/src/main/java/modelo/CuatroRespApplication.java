@@ -1,5 +1,6 @@
-package com.example.hoja11cuestionario;
+package modelo;
 
+import controlador.CuatroRespControl;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -7,14 +8,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class CuatroRespApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException, ClassNotFoundException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(CuatroRespApplication.class.getResource("cuatro-resp-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Hello!");
 
-        HelloController controller = fxmlLoader.getController();
+        CuatroRespControl controller = fxmlLoader.getController();
         controller.startController();
         stage.setScene(scene);
         stage.show();
@@ -23,6 +24,9 @@ public class HelloApplication extends Application {
     public static void main(String[] args) throws ClassNotFoundException {
 
        // ContolBD.ejecutar(Transformar.insertPregunta1(1,"Elige una profesión:","Actor","p_andy",4));
+
+
+
 
         launch();
     }
