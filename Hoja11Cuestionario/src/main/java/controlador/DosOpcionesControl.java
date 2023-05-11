@@ -33,8 +33,12 @@ public class DosOpcionesControl {
 
     @FXML
     void siguientePregunta(ActionEvent event) throws ClassNotFoundException {
+
+        ContolBD.ejecutar(Transformar.insertOption(ContolBD.hacerArrayPuntuaciones(Transformar.valuesOpcion(numeroPregunta,retornaOpcion()))));
         numeroPregunta++;
+
         startController();
+
     }
 
     @FXML
@@ -47,10 +51,10 @@ public class DosOpcionesControl {
 
     public void startController() throws ClassNotFoundException {
 
-        ArrayList<String> listaResult = ContolBD.hacerArrayPregunta(Transformar.selectRs4(numeroPregunta));
+        ArrayList<String> listaResult = ContolBD.hacerArrayDeConsulta(Transformar.selectRs4(numeroPregunta));
 
         try {
-            listaResult = ContolBD.hacerArrayPregunta(Transformar.selectRs4(numeroPregunta));
+            listaResult = ContolBD.hacerArrayDeConsulta(Transformar.selectRs4(numeroPregunta));
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -60,6 +64,18 @@ public class DosOpcionesControl {
         no.setText(listaResult.get(2));
 
 
+    }
+
+    public boolean retornaOpcion(){
+
+        boolean opcion; //true= si false=no
+        if (si.isSelected()) {
+            opcion=true;
+        }else {
+            opcion=false;
+        }
+
+        return opcion;
     }
 
 }

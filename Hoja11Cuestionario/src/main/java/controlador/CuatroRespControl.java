@@ -56,7 +56,7 @@ public class CuatroRespControl {
 
     public  void startController() throws ClassNotFoundException {
 
-        ArrayList<String> listaResult = ContolBD.hacerArrayPregunta(Transformar.selectRs4(numeroPregunta));
+        ArrayList<String> listaResult = ContolBD.hacerArrayDeConsulta(Transformar.selectRs4(numeroPregunta));
 
         preguntaid.setText(listaResult.get(0));
         idOpcion1.setText(listaResult.get(1));

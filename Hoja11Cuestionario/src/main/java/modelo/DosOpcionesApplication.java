@@ -11,14 +11,19 @@ import java.io.IOException;
 public class DosOpcionesApplication extends Application {
         @Override
         public void start(Stage stage) throws IOException, ClassNotFoundException {
-            FXMLLoader fxmlLoader = new FXMLLoader(modelo.CuatroRespApplication.class.getResource("dos-opciones-view.fxml"));
+
+            FXMLLoader fxmlLoader = new FXMLLoader(modelo.DosOpcionesApplication.class.getResource("dos-opciones-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Hello!");
 
             DosOpcionesControl controller = fxmlLoader.getController();
             controller.startController();
+
             stage.setScene(scene);
             stage.show();
+
+
+
         }
 
         public static void main(String[] args) throws ClassNotFoundException {
@@ -27,5 +32,25 @@ public class DosOpcionesApplication extends Application {
 
             launch();
         }
+
+        /*public static void comprobarTipo(int tipo_pregunta){
+
+            String vista="";
+
+            switch (tipo_pregunta){
+                case 1:
+                    vista="cuatro-resp-view";
+                    break;
+                case 2:
+                    vista="dos-opciones-view";
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+            }
+
+
+        }*/
 
 }
