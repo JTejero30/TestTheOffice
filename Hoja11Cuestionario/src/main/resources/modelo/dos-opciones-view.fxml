@@ -59,16 +59,8 @@
                                     </toggleGroup>
                                  </ToggleButton>
                                  <ToggleButton fx:id="resp2" mnemonicParsing="false" text="NO" toggleGroup="$toogleGroup" />
-                                 <ToggleButton fx:id="resp2" layoutX="30.0" layoutY="25.0" mnemonicParsing="false" text="SI">
-                                    <toggleGroup>
-                                       <ToggleGroup fx:id="toogleGroup1" />
-                                    </toggleGroup>
-                                 </ToggleButton>
-                                 <ToggleButton fx:id="resp2" layoutX="30.0" layoutY="87.0" mnemonicParsing="false" text="NO">
-                                    <toggleGroup>
-                                       <ToggleGroup fx:id="toogleGroup1" />
-                                    </toggleGroup>
-                                 </ToggleButton>
+                                 <ToggleButton fx:id="resp3" layoutX="30.0" layoutY="25.0" mnemonicParsing="false" text="SI" toggleGroup="$toogleGroup" />
+                                 <ToggleButton fx:id="resp4" layoutX="30.0" layoutY="87.0" mnemonicParsing="false" text="NO" toggleGroup="$toogleGroup" />
                               </children>
                            </VBox>
                         </children>

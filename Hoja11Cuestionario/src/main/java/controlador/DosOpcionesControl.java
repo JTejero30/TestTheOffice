@@ -50,6 +50,12 @@ public class DosOpcionesControl {
     private ToggleButton resp2;
 
     @FXML
+    private ToggleButton resp3;
+
+    @FXML
+    private ToggleButton resp4;
+
+    @FXML
     private ToggleButton si;
 
     @FXML
@@ -63,18 +69,6 @@ public class DosOpcionesControl {
 
     private Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
-
-    @FXML
-    private ToggleButton no1;
-
-    @FXML
-    private ToggleButton no11;
-
-    @FXML
-    private ToggleButton si1;
-
-    @FXML
-    private ToggleButton si11;
 
     //Aqui importante cambiarlo, que es donde empieza siempre la pregunta
     private int numeroPregunta = 6;
@@ -106,6 +100,11 @@ public class DosOpcionesControl {
 
         si.setUserData("si");
         no.setUserData("no");
+        resp1.setUserData("resp1");
+        resp2.setUserData("resp2");
+        resp3.setUserData("resp3");
+        resp4.setUserData("resp4");
+
 
 //        Node removedNode = VboxContainer.getChildren().remove(VBox4resp);
         Node removedNode2 = VBox2resp;
@@ -125,6 +124,12 @@ public class DosOpcionesControl {
             VboxContainer.getChildren().remove(removedNode4);
 
             VboxContainer.getChildren().add(VBox4resp);
+
+            preguntaid.setText(listaResult.get(0));
+            resp1.setText(listaResult.get(1));
+            resp2.setText(listaResult.get(2));
+            resp3.setText(listaResult.get(3));
+            resp4.setText(listaResult.get(4));
         }
         else{
             VboxContainer.getChildren().remove(removedNode4);
