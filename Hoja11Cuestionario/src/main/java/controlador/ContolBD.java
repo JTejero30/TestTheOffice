@@ -9,6 +9,46 @@ import java.util.ArrayList;
 
 
 public class ContolBD {
+    public static void ejecutar(String sql) throws ClassNotFoundException {
+        Connection conexion = null;
+        Statement sentenciaSQL = null;
+        int resultado;
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost/theoffice?useSSL=false&user=root&password=");
+
+            sentenciaSQL = conexion.createStatement();
+            resultado = sentenciaSQL.executeUpdate(sql);
+
+            System.out.println(sql);
+
+            if (resultado >= 1) {
+                System.out.println("Se ha insertado bien.");
+            } else {
+                System.out.println("Se ha insertado mal");
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            ex.printStackTrace();
+            // System.out.println("Error");
+        } finally {
+            try {
+                sentenciaSQL.close();
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            try {
+                conexion.close();
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
+        //System.out.println("Conectado/desconectado");
+    }
 
     public static ArrayList<String> hacerArrayDeConsulta(String sql) throws ClassNotFoundException {
         Connection conexion = null;
@@ -21,7 +61,6 @@ public class ContolBD {
             conexion = DriverManager.getConnection("jdbc:mysql://localhost/theoffice?useSSL=false&user=root&password=");
 
             sentenciaSQL = conexion.createStatement();
-
 
             //System.out.println(sql);
 
@@ -53,47 +92,6 @@ public class ContolBD {
         return listaResult;
     }
 
-    public static void ejecutar(String sql) throws ClassNotFoundException {
-        Connection conexion = null;
-        Statement sentenciaSQL = null;
-        int resultado;
-
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost/theoffice?useSSL=false&user=root&password=");
-
-            sentenciaSQL = conexion.createStatement();
-            resultado=sentenciaSQL.executeUpdate(sql);
-
-            System.out.println(sql);
-
-            if (resultado >= 1) {
-                System.out.println("Se ha insertado bien.");
-            } else {
-                System.out.println("Se ha insertado mal");
-            }
-        } catch (SQLException | ClassNotFoundException ex) {
-            ex.printStackTrace();
-            // System.out.println("Error");
-        } finally {
-            try {
-                sentenciaSQL.close();
-            } catch (SQLException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            try {
-                conexion.close();
-            } catch (SQLException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-
-        //System.out.println("Conectado/desconectado");
-    }
-
     public static ArrayList<String> hacerArrayPuntuaciones(String sql) throws ClassNotFoundException {
         Connection conexion = null;
         Statement sentenciaSQL = null;
@@ -107,7 +105,7 @@ public class ContolBD {
             sentenciaSQL = conexion.createStatement();
 
 
-           // System.out.println(sql);
+            // System.out.println(sql);
 
             rs = sentenciaSQL.executeQuery(sql);
 
@@ -142,8 +140,47 @@ public class ContolBD {
             }
         }
 
-      //  System.out.println("Conectado/desconectado");
+        //  System.out.println("Conectado/desconectado");
         return listaResult;
     }
-    }
 
+    public static int verTipoPregunta(String sql) throws ClassNotFoundException {
+        Connection conexion = null;
+        Statement sentenciaSQL = null;
+        ResultSet rs;
+        int tipoPregunta = 0;
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost/theoffice?useSSL=false&user=root&password=");
+
+            sentenciaSQL = conexion.createStatement();
+
+            // System.out.println(sql);
+
+            rs = sentenciaSQL.executeQuery(sql);
+
+            while (rs.next()) {
+                tipoPregunta = rs.getInt("tipoPregunta");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            // System.out.println("Error");
+        } finally {
+            try {
+                sentenciaSQL.close();
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            try {
+                conexion.close();
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        //  System.out.println("Conectado/desconectado");
+        return tipoPregunta;
+    }
+}
