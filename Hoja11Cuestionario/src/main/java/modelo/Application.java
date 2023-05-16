@@ -1,33 +1,30 @@
 package modelo;
 
-
-import controlador.ImagenesControl;
-import javafx.application.Application;
+import controlador.Controlador;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class imagenesApplication extends Application {
+public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException, ClassNotFoundException {
-        FXMLLoader fxmlLoader = new FXMLLoader(modelo.imagenesApplication.class.getResource("imagenes-view.fxml"));
+
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("dos-opciones-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Hello!");
 
-        ImagenesControl controller = fxmlLoader.getController();
+        Controlador controller = fxmlLoader.getController();
+        controller.randomInterval();
         controller.startController();
+
         stage.setScene(scene);
         stage.show();
+
     }
 
     public static void main(String[] args) throws ClassNotFoundException {
-
-       // ContolBD.ejecutar(Transformar.insertPregunta1(1,"Elige una profesión:","Actor","p_andy",4));
-
-
-
 
         launch();
     }

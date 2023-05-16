@@ -12,7 +12,7 @@ import modelo.Transformar;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class DosOpcionesControl {
+public class Controlador {
 
     private String personajeGanador;
     private ArrayList<Integer> listaPreguntasRandom;
@@ -29,7 +29,7 @@ public class DosOpcionesControl {
     @FXML
     private BorderPane bordP;
     @FXML
-    private Button button;
+    private Button buttonAnterior;
     @FXML
     private VBox groupid;
     @FXML
@@ -59,8 +59,10 @@ public class DosOpcionesControl {
     //Aqui importante cambiarlo, que es donde empieza siempre la pregunta
     private int numeroPreguntaArrayListRandom = 0;
 
+
     @FXML
     void anteriorPregunta(ActionEvent event) throws ClassNotFoundException {
+        ContolBD.ejecutar(Transformar.eliminarUltimoInsert());
         numeroPreguntaArrayListRandom--;
         startController();
     }
@@ -79,17 +81,7 @@ public class DosOpcionesControl {
 
         } else {
             if (YN.getSelectedToggle() != null) {
-                // System.out.println(YN.getSelectedToggle().getUserData().toString());
-
-                //System.out.println(toogleGroup.getSelectedToggle().getUserData());
-                // System.out.println(Transformar.valuesOpcion(numeroPregunta,toogleGroup.getSelectedToggle().getUserData().toString()));
-
                 ContolBD.ejecutar(Transformar.insertOption(ContolBD.hacerArrayPuntuaciones(Transformar.valuesOpcion(listaPreguntasRandom.get(numeroPreguntaArrayListRandom), YN.getSelectedToggle().getUserData().toString()))));
-
-                // System.out.println(Transformar.insertOption(ContolBD.hacerArrayPuntuaciones(Transformar.valuesOpcion(listaPreguntasRandom.get(numeroPreguntaArrayListRandom), YN.getSelectedToggle().getUserData().toString()))));
-
-                System.out.println("YN");
-                System.out.println(numeroPreguntaArrayListRandom);
 
                 numeroPreguntaArrayListRandom++;
 
@@ -99,8 +91,6 @@ public class DosOpcionesControl {
                 startController();
             } else if (toogleGroup.getSelectedToggle() != null) {
                 ContolBD.ejecutar(Transformar.insertOption(ContolBD.hacerArrayPuntuaciones(Transformar.valuesOpcion(listaPreguntasRandom.get(numeroPreguntaArrayListRandom), toogleGroup.getSelectedToggle().getUserData().toString()))));
-                System.out.println("toogle");
-                System.out.println(numeroPreguntaArrayListRandom);
                 numeroPreguntaArrayListRandom++;
 
                 //Esto se hace para que al dar a la siguiente pregunta, no haya ninguna opcion seleccionada
@@ -130,9 +120,9 @@ public class DosOpcionesControl {
 
         ArrayList<String> listaResult;
 
+
         try {
             listaResult = ContolBD.hacerArrayDeConsulta(Transformar.selectRs4(listaPreguntasRandom.get(numeroPreguntaArrayListRandom)));
-            System.out.println("hola1 " + listaResult);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -161,6 +151,11 @@ public class DosOpcionesControl {
         } else {
             System.out.println("Error");
         }
+
+        buttonAnterior.setDisable(numeroPreguntaArrayListRandom<=0);
+        //si es la primera pregunta: anterior Disabled
+
+
     }
 
     public void randomInterval() {
@@ -177,7 +172,6 @@ public class DosOpcionesControl {
                 listaPreguntasRandomL.add(number);
             }
         }
-        System.out.println(listaPreguntasRandomL);
         listaPreguntasRandom = listaPreguntasRandomL;
     }
 
@@ -211,4 +205,6 @@ public class DosOpcionesControl {
 //        }
         return idGanador;
     }
+
+
 }
