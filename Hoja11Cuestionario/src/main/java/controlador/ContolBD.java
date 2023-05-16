@@ -62,7 +62,6 @@ public class ContolBD {
 
             sentenciaSQL = conexion.createStatement();
 
-            //System.out.println(sql);
 
             rs = sentenciaSQL.executeQuery(sql);
 
@@ -87,8 +86,6 @@ public class ContolBD {
             }
         }
 
-        //System.out.println("Conectado/desconectado");
-        //System.out.println(listaResult);
         return listaResult;
     }
 
@@ -140,7 +137,6 @@ public class ContolBD {
             }
         }
 
-        //  System.out.println("Conectado/desconectado");
         return listaResult;
     }
 
@@ -155,8 +151,6 @@ public class ContolBD {
             conexion = DriverManager.getConnection("jdbc:mysql://localhost/theoffice?useSSL=false&user=root&password=");
 
             sentenciaSQL = conexion.createStatement();
-
-            // System.out.println(sql);
 
             rs = sentenciaSQL.executeQuery(sql);
 
