@@ -14,6 +14,7 @@ import java.util.Random;
 
 public class DosOpcionesControl {
 
+    private String personajeGanador;
     private ArrayList<Integer> listaPreguntasRandom;
     @FXML
     private VBox VBox2resp;
@@ -195,6 +196,19 @@ public class DosOpcionesControl {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+
+
+//        switch (idGanador) {
+//            case 0:
+//                pers
+//                break;
+//            case 2:
+//                break;
+//            case 3:
+//                break;
+//            default:
+//                break;
+//        }
         return idGanador;
     }
 }
