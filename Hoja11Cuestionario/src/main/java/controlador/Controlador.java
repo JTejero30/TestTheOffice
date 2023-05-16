@@ -3,55 +3,82 @@ package controlador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import modelo.Transformar;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Controlador {
 
-    private String personajeGanador;
-    private ArrayList<Integer> listaPreguntasRandom;
     @FXML
     private VBox VBox2resp;
+
     @FXML
     private VBox VBox4resp;
+
     @FXML
     private VBox VboxContainer;
+
     @FXML
     private ToggleGroup YN;
+
     @FXML
     private AnchorPane answerAnchorPane;
+
     @FXML
     private BorderPane bordP;
+
     @FXML
     private Button buttonAnterior;
+
     @FXML
     private VBox groupid;
+
     @FXML
     private ToggleButton no;
+
     @FXML
-    private Label preguntaid;
+    private Text preguntaid;
+
     @FXML
     private ToggleButton resp1;
+
     @FXML
     private ToggleButton resp2;
+
     @FXML
     private ToggleButton resp3;
+
     @FXML
     private ToggleButton resp4;
+
     @FXML
     private ToggleButton si;
+
     @FXML
     private ToggleGroup toogleGroup;
+    private String personajeGanador;
+    private ArrayList<Integer> listaPreguntasRandom;
     @FXML
     private ToggleGroup toogleGroup1;
     @FXML
     private VBox VBox4;
+
+    @FXML
+    private ImageView imagen;
+    @FXML
+    private Button siguientePregunta;
 
     private Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
@@ -71,12 +98,12 @@ public class Controlador {
     void siguientePregunta(ActionEvent event) throws ClassNotFoundException {
 
 
-
         if (numeroPreguntaArrayListRandom >= 4) {
+            siguientePregunta.setText("Finalizar");
+
             System.out.println(calcularPersonaje());
             System.out.println("fin");
-
-
+            System.out.println("Eres"+personajeGanador);
 
 
         } else {
@@ -106,8 +133,11 @@ public class Controlador {
 
     public void startController() throws ClassNotFoundException {
         int tipoPregunta = ContolBD.verTipoPregunta(Transformar.tipoPregunta(listaPreguntasRandom.get(numeroPreguntaArrayListRandom)));
+        File imageFile = new File("../../../../img/casaGranja.jpg"); // Ruta del archivo local
 
-        si.setUserData("si");
+        Image image = new Image(imageFile.toURI().toString());
+       // ImageView imageView = new ImageView(image);
+        imagen.setImage(image);
         no.setUserData("no");
 
         resp1.setUserData("resp1");
@@ -151,11 +181,8 @@ public class Controlador {
         } else {
             System.out.println("Error");
         }
-
-        buttonAnterior.setDisable(numeroPreguntaArrayListRandom<=0);
+        buttonAnterior.setDisable(numeroPreguntaArrayListRandom <= 0);
         //si es la primera pregunta: anterior Disabled
-
-
     }
 
     public void randomInterval() {
@@ -175,36 +202,36 @@ public class Controlador {
         listaPreguntasRandom = listaPreguntasRandomL;
     }
 
-    public int calcularPersonaje(){
+    public String calcularPersonaje() {
 
-        int jugadorGanador=Integer.MIN_VALUE;
-        int idGanador=0;
+        int jugadorGanador = Integer.MIN_VALUE;
+        int idGanador = 0;
         try {
-            ArrayList<Integer> listaPersonajes=ContolBD.calcularPersonaje(Transformar.calcularPersonaje());
-            for (int i =0;i<listaPersonajes.size();i++){
-                if (listaPersonajes.get(i)>=jugadorGanador){
-                    jugadorGanador=listaPersonajes.get(i);
-                    idGanador=i;
+            ArrayList<Integer> listaPersonajes = ContolBD.calcularPersonaje(Transformar.calcularPersonaje());
+            for (int i = 0; i < listaPersonajes.size(); i++) {
+                if (listaPersonajes.get(i) >= jugadorGanador) {
+                    jugadorGanador = listaPersonajes.get(i);
+                    idGanador = i;
+                    System.out.println(idGanador);
                 }
             }
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-
-
-//        switch (idGanador) {
-//            case 0:
-//                pers
-//                break;
-//            case 2:
-//                break;
-//            case 3:
-//                break;
-//            default:
-//                break;
-//        }
-        return idGanador;
+        switch (idGanador) {
+            case 0 -> personajeGanador = "michael";
+            case 1 -> personajeGanador = "Dwight";
+            case 2 -> personajeGanador = "jim";
+            case 3 -> personajeGanador = "pam";
+            case 4 -> personajeGanador = "creed";
+            case 5 -> personajeGanador = "kevin";
+            case 6 -> personajeGanador = "andy";
+            case 7 -> personajeGanador = "angela";
+            case 8 -> personajeGanador = "stanley";
+            case 9 -> personajeGanador = "meredith";
+            case 10 -> personajeGanador = "oscar";
+            default -> personajeGanador = "null";
+        }
+        return personajeGanador;
     }
-
-
 }

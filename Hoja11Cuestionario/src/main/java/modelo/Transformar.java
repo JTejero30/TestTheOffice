@@ -111,7 +111,7 @@ public class Transformar {
     }
 
     public static String calcularPersonaje() {
-        String sql = "select sum(michael) as michael,sum(dwight)as dwight,sum(jim)as jim,sum(pam)as pam,sum(creed)as creed,sum(kevin)as kevin,sum(andy)as andy,sum(angela)as angela,sum(stanley)as stanley,sum(meredith)as meredith,sum(meredith)as meredith from personajes;\n;";
+        String sql = "select sum(michael) as michael,sum(dwight)as dwight,sum(jim)as jim,sum(pam)as pam,sum(creed)as creed,sum(kevin)as kevin,sum(andy)as andy,sum(angela)as angela,sum(stanley)as stanley,sum(meredith)as meredith,sum(oscar)as oscar from personajes;\n;";
         return sql;
     }
 }

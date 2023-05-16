@@ -34,12 +34,12 @@ FORMAS DE PREGUNTAR
 		-Casa solo												Creed +2, Dwight+3, Darryl +1
 	1.3.¿Que sueles beber mientras trabajas?
 		-Cafe													Michael+2, Pam +3, Stanley+2
-		-Bebida energetica										Creed+2, andy+1		
+		-Batido de chocolate(gordo)									stanley+2, kevin+3		
 		-Cerveza												Meredith+3
-		-Nada, me gusta concentrarme							Dwight +3
+		-Nada, me gusta concentrarme									Dwight +3
 	1.4 ¿Que te comerias en el descanso del trabajo?
 		-Ensalada												Angela+3, Pam+2,
-		-Mesa sofisticada degustacion							Oscar+3, Pam+2, Kevin+1, Andy+1
+		-Mesa sofisticada degustacion									Oscar+3, Pam+2, Kevin+1, Andy+1
 		-Sandwich												Jim+3, Darryl+2
 		-Algo muy gordo											Kevin+4, Darryl+2
 	1.5 3.2 Elige un animal 
@@ -49,44 +49,44 @@ FORMAS DE PREGUNTAR
 2-Respuesta si/no
 	2.1.Bebes alcohol											
 		-Yes													Meredith+3, Creed+2, Darryl+1, Andy+1
-		-No														Angela+2, Dwight +3
+		-No													Angela+2, Dwight +3
 	2.2.Te has enamorado alguna vez								
 		-Yes													Jim+3, Pam+3, michael+2, Andy+2
-		-No														Stanley+2, Creed+3, Kevin+2, Dwight+2
+		-No													Stanley+2, Creed+3, Kevin+2, Dwight+2
 	2.3 Alguna vez has cometido una ilegalidad	
 		-Yes													Creed+3, Satnley+2, Meredith+3
-		-No														Dwight+3, Angela+3,Pam+2, Oscar+1
+		-No													Dwight+3, Angela+3,Pam+2, Oscar+1
 3-Respuesta con 4 opciones
 	3.1 Elige una profesion
 		-Actor													Andy+4
-		-Pintor													Pam+4
-		-Diseño moda											Oscar+4
+		-Pintor												Pam+4
+		-Diseño moda												Oscar+4
 		-CEO													Michael+4
 	
 	3.4 Como te describirian tus compañeros de trabajo
-		-Tu presencia se hace notar								Michael+3, Dwight+2, Jim+1
-		-Una persona trabajadora 								Dwight+3, Stanley +2,Pam +1, Angela+3
-		-El alma de la fiesta									Jim+2, Michael+3
-		-Un poco distante y reservado							Dwight+2, Angela+3, Oscar+1
+		-Tu presencia se hace notar									Michael+3, Dwight+2, Jim+1
+		-Una persona trabajadora 										Dwight+3, Stanley +2,Pam +1, Angela+3
+		-El alma de la fiesta										Jim+2, Michael+3
+		-Un poco distante y reservado									Dwight+2, Angela+3, Oscar+1
 	3.5 ¿Cómo describirías tu estilo de vestimenta?
-		a) Casual y cómodo 										Jim+2, Pam+2
-		b) Elegante y sofisticado 								Oscar+3, Angela+2
-		c) Colorido y excéntrico 								Stanley+2, Creed+2, Andy+3
-		d) No me importa en exceso mi estilo de vestimenta		Dwight+3
+		a) Casual y cómodo 											Jim+2, Pam+2
+		b) Elegante y sofisticado 									Oscar+3, Angela+2
+		c) Colorido y excéntrico 										Stanley+2, Creed+2, Andy+3
+		d) No me importa en exceso mi estilo de vestimenta						Dwight+3
 	3.6 ¿Cómo te describes en situaciones de presión o estrés?	
-		a) Me mantengo calmado/a y enfocado/a 					Jim+3, Angela+2, Stanley+3
-		b) Me siento abrumado/a pero puedo manejarlo 			Kevin+3, Pam+2
-		c) Me estreso fácilmente y puedo sentirme paralizado/a 	Michael+3,
-		d) No se que es una situacion de estres					Dwight+4
+		a) Me mantengo calmado/a y enfocado/a 								Jim+3, Angela+2, Stanley+3
+		b) Me siento abrumado/a pero puedo manejarlo 						Kevin+3, Pam+2
+		c) Me estreso fácilmente y puedo sentirme paralizado/a 					Michael+3,
+		d) No se que es una situacion de estres							Dwight+4
 	3.7 Elige un deporte
 		-Parkour												Michael+3, Andy+3, Dwight+3
-		-Comer perritos calientes								kevin +4
-		-Basket													Jim+3, Kevin+2
+		-Comer perritos calientes										kevin +4
+		-Basket												Jim+3, Kevin+2
 		-Running												Andy+3
 		
 4-Barra de MuyDesacuerdo/Desacuerdo/NSNC/Deacuerdo/MuyDeacuerdo
-	4.1 Cuanto te gusta bromear									Jim, Michael
-	4.2 ¿Comes vegetales?										Kevin
-	4.3 ¿Te gusta el arte?										Pam, Andy, Oscar
+	4.1 Cuanto te gusta bromear										Jim, Michael
+	4.2 ¿Comes vegetales?											Kevin
+	4.3 ¿Te gusta el arte?											Pam, Andy, Oscar
 	4.4 ¿Cuanta libertad para autogestionarte 
-	te gusta tener en el trabajo? 								Michael, Jim, Dwight
+	te gusta tener en el trabajo? 										Michael, Jim, Dwight
