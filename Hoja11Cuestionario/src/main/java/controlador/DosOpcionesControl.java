@@ -67,8 +67,15 @@ public class DosOpcionesControl {
     @FXML
     void siguientePregunta(ActionEvent event) throws ClassNotFoundException {
 
+
+
         if (numeroPreguntaArrayListRandom >= 4) {
+            System.out.println(calcularPersonaje());
             System.out.println("fin");
+
+
+
+
         } else {
             if (YN.getSelectedToggle() != null) {
                 // System.out.println(YN.getSelectedToggle().getUserData().toString());
@@ -111,6 +118,7 @@ public class DosOpcionesControl {
 
         si.setUserData("si");
         no.setUserData("no");
+
         resp1.setUserData("resp1");
         resp2.setUserData("resp2");
         resp3.setUserData("resp3");
@@ -170,5 +178,23 @@ public class DosOpcionesControl {
         }
         System.out.println(listaPreguntasRandomL);
         listaPreguntasRandom = listaPreguntasRandomL;
+    }
+
+    public int calcularPersonaje(){
+
+        int jugadorGanador=Integer.MIN_VALUE;
+        int idGanador=0;
+        try {
+            ArrayList<Integer> listaPersonajes=ContolBD.calcularPersonaje(Transformar.calcularPersonaje());
+            for (int i =0;i<listaPersonajes.size();i++){
+                if (listaPersonajes.get(i)>=jugadorGanador){
+                    jugadorGanador=listaPersonajes.get(i);
+                    idGanador=i;
+                }
+            }
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return idGanador;
     }
 }
