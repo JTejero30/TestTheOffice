@@ -34,7 +34,7 @@ FORMAS DE PREGUNTAR
 		-Casa solo												Creed +2, Dwight+3, Darryl +1
 	1.3.¿Que sueles beber mientras trabajas?
 		-Cafe													Michael+2, Pam +3, Stanley+2
-		-Bebida energetica										Creed+2, andy+1		
+		-Snacks													Kevin +3	
 		-Cerveza												Meredith+3
 		-Nada, me gusta concentrarme							Dwight +3
 	1.4 ¿Que te comerias en el descanso del trabajo?

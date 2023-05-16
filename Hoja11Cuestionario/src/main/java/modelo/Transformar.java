@@ -98,8 +98,8 @@ public class Transformar {
     }
 
     public static String tipoPregunta(int idPregunta) {
-        String sql = "SELECT tipo_pregunta as tipoPregunta from preguntas where id_pregunta=" + idPregunta;
-        return sql;
+
+        return "SELECT tipo_pregunta as tipoPregunta from preguntas where id_pregunta=" + idPregunta;
     }
     public static String  eliminarUltimoInsert() {
         return  "DELETE FROM personajes\n" +
@@ -111,7 +111,7 @@ public class Transformar {
     }
 
     public static String calcularPersonaje() {
-        String sql = "select sum(michael) as michael,sum(dwight)as dwight,sum(jim)as jim,sum(pam)as pam,sum(creed)as creed,sum(kevin)as kevin,sum(andy)as andy,sum(angela)as angela,sum(stanley)as stanley,sum(meredith)as meredith,sum(meredith)as meredith from personajes;\n;";
-        return sql;
+        return "select sum(michael) as michael,sum(dwight)as dwight,sum(jim)as jim,sum(pam)as pam,sum(creed)as creed,sum(kevin)as kevin,sum(andy)as andy,sum(angela)as angela,sum(stanley)as stanley,sum(meredith)as meredith,sum(meredith)as meredith from personajes;\n;";
+
     }
 }

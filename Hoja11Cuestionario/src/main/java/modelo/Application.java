@@ -11,7 +11,7 @@ public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException, ClassNotFoundException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("dos-opciones-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(modelo.Application.class.getResource("dos-opciones-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Hello!");
 
