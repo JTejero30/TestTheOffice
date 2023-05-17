@@ -121,7 +121,7 @@ public class ContolBD {
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
-            // System.out.println("Error");
+            System.out.println("Error");
         } finally {
             try {
                 sentenciaSQL.close();

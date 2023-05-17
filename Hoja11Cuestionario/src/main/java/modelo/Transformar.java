@@ -111,7 +111,9 @@ public class Transformar {
     }
 
     public static String calcularPersonaje() {
+
         return "select sum(michael) as michael,sum(dwight)as dwight,sum(jim)as jim,sum(pam)as pam,sum(creed)as creed,sum(kevin)as kevin,sum(andy)as andy,sum(angela)as angela,sum(stanley)as stanley,sum(meredith)as meredith,sum(meredith)as meredith from personajes;\n;";
+
 
     }
 }
