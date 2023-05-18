@@ -68,6 +68,7 @@ public class Transformar {
                 break;
             case "si":
                 sql = "SELECT p_michael , p_dwight , p_jim , p_pam , p_creed , p_kevin , p_andy , p_angela , p_stanley , p_meredith , p_oscar  FROM `preguntas4resp` WHERE id_pregunta = " + id_pregunta + " LIMIT 1;";
+                break;
             case "no":
                 sql = "SELECT p_michael , p_dwight , p_jim , p_pam , p_creed , p_kevin , p_andy , p_angela , p_stanley , p_meredith , p_oscar  FROM `preguntas4resp` WHERE id_pregunta = " + id_pregunta + " LIMIT 1,2;";
                 break;
@@ -75,7 +76,6 @@ public class Transformar {
             default:
                 break;
         }
-        // sql = "SELECT p_michael , p_dwight , p_jim , p_pam , p_creed , p_kevin , p_andy , p_angela , p_stanley , p_meredith , p_oscar  FROM `preguntas4resp` WHERE id_pregunta= " + id_pregunta + " LIMIT 1,2;";
         return sql;
     }
 
@@ -112,7 +112,7 @@ public class Transformar {
 
     public static String calcularPersonaje() {
 
-        return "select sum(michael) as michael,sum(dwight)as dwight,sum(jim)as jim,sum(pam)as pam,sum(creed)as creed,sum(kevin)as kevin,sum(andy)as andy,sum(angela)as angela,sum(stanley)as stanley,sum(meredith)as meredith,sum(meredith)as meredith from personajes;\n;";
+        return "select sum(michael) as michael,sum(dwight)as dwight,sum(jim)as jim,sum(pam)as pam,sum(creed)as creed,sum(kevin)as kevin,sum(andy)as andy,sum(angela)as angela,sum(stanley)as stanley,sum(meredith)as meredith,sum(oscar)as oscar from personajes;\n;";
 
 
     }

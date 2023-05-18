@@ -88,32 +88,27 @@ public class Controlador {
 
     @FXML
     private ToggleGroup toogleGroup;
-    private String personajeGanador;
-    private ArrayList<Integer> listaPreguntasRandom;
-    @FXML
-    private ToggleGroup toogleGroup1;
-
-
     @FXML
     private Button siguientePregunta;
 
     private Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
-
+    private String personajeGanador;
+    private ArrayList<Integer> listaPreguntasRandom;
     //Aqui importante cambiarlo, que es donde empieza siempre la pregunta
-    private int numeroPreguntaArrayListRandom = 0;
+    private int numeroPreguntaArrayListRandom=0;
 
     public void randomInterval() {
         int min = 1; // valor minimo
-        int max = 9; // valor maximo of the interval, hay que hacerlo automatico
-        int size = 5; // tamaño de la lista
-        ArrayList<Integer> prueba = new ArrayList<>();
+        int max = 13; // valor maximo of the interval, hay que hacerlo automatico
+        int size = 12; // tamaño de la lista
+        //ArrayList<Integer> prueba = new ArrayList<>();
         ArrayList<Integer> listaPreguntasRandomL = new ArrayList<>();
 
-        prueba.add(6);
-        prueba.add(10);
-        prueba.add(13);
-        prueba.add(12);
+       // prueba.add(6);
+        //prueba.add(10);
+        //prueba.add(13);
+        //prueba.add(12);
 
 
         Random random = new Random();
@@ -123,8 +118,8 @@ public class Controlador {
                 listaPreguntasRandomL.add(number);
             }
         }
-        listaPreguntasRandom = prueba;
-        //listaPreguntasRandom = listaPreguntasRandomL;
+        //listaPreguntasRandom = prueba;
+        listaPreguntasRandom = listaPreguntasRandomL;
     }
 
     @FXML
@@ -138,13 +133,15 @@ public class Controlador {
     void siguientePregunta(ActionEvent event) throws ClassNotFoundException {
 
 
-        if (numeroPreguntaArrayListRandom >= 4) {
+        if (numeroPreguntaArrayListRandom >= 11) {
             siguientePregunta.setText("Finalizar");
 
             System.out.println(calcularPersonaje());
-            System.out.println("fin");
 
-            System.out.println("Eres" + personajeGanador);
+            //limpiamos la tabla puntuaciones
+            ContolBD.ejecutar("DELETE FROM personajes");
+
+            //System.out.println("Eres" + personajeGanador);
 
         } else {
             comprobarClickado();
@@ -194,10 +191,10 @@ public class Controlador {
             resp3.setUserData("resp3");
             resp4.setUserData("resp4");
 
-            btn1.setUserData("btn1");
-            btn2.setUserData("btn2");
-            btn3.setUserData("btn3");
-            btn4.setUserData("btn4");
+            btn1.setUserData("resp1");
+            btn2.setUserData("resp2");
+            btn3.setUserData("resp3");
+            btn4.setUserData("resp4");
 
             Node removedNode2 = VBox2resp;
             Node removedNode4 = VBox4resp;
@@ -305,7 +302,7 @@ public class Controlador {
         }
         switch (idGanador) {
             case 0 -> personajeGanador = "michael";
-            case 1 -> personajeGanador = "Dwight";
+            case 1 -> personajeGanador = "dwight";
             case 2 -> personajeGanador = "jim";
             case 3 -> personajeGanador = "pam";
             case 4 -> personajeGanador = "creed";
