@@ -5,28 +5,19 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 
 
-
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.image.Image;
 
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import modelo.Transformar;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
-
-
-import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
 
 
 public class Controlador {
@@ -50,6 +41,20 @@ public class Controlador {
 
     @FXML
     private ImageView imgD;
+    @FXML
+    private ToggleButton btn1;
+
+    @FXML
+    private ToggleButton btn2;
+
+    @FXML
+    private ToggleButton btn3;
+
+    @FXML
+    private ToggleButton btn4;
+
+    @FXML
+    private ToggleGroup btnGroup;
 
     @FXML
     private VBox VboxContainer;
@@ -98,6 +103,30 @@ public class Controlador {
     //Aqui importante cambiarlo, que es donde empieza siempre la pregunta
     private int numeroPreguntaArrayListRandom = 0;
 
+    public void randomInterval() {
+        int min = 1; // valor minimo
+        int max = 9; // valor maximo of the interval, hay que hacerlo automatico
+        int size = 5; // tamaño de la lista
+        ArrayList<Integer> prueba = new ArrayList<>();
+        ArrayList<Integer> listaPreguntasRandomL = new ArrayList<>();
+
+        prueba.add(6);
+        prueba.add(10);
+        prueba.add(13);
+        prueba.add(12);
+
+
+        Random random = new Random();
+        while (listaPreguntasRandomL.size() < size) {
+            int number = random.nextInt(max - min + 1) + min;
+            if (!listaPreguntasRandomL.contains(number)) {
+                listaPreguntasRandomL.add(number);
+            }
+        }
+        listaPreguntasRandom = prueba;
+        //listaPreguntasRandom = listaPreguntasRandomL;
+    }
+
     @FXML
     void anteriorPregunta(ActionEvent event) throws ClassNotFoundException {
         ContolBD.ejecutar(Transformar.eliminarUltimoInsert());
@@ -115,64 +144,85 @@ public class Controlador {
             System.out.println(calcularPersonaje());
             System.out.println("fin");
 
-            System.out.println("Eres"+personajeGanador);
-
-
+            System.out.println("Eres" + personajeGanador);
 
         } else {
-            if (YN.getSelectedToggle() != null) {
-                ContolBD.ejecutar(Transformar.insertOption(ContolBD.hacerArrayPuntuaciones(Transformar.valuesOpcion(listaPreguntasRandom.get(numeroPreguntaArrayListRandom), YN.getSelectedToggle().getUserData().toString()))));
+            comprobarClickado();
+        }
+    }
 
-                numeroPreguntaArrayListRandom++;
+    @FXML
+    void comprobarClickado() throws ClassNotFoundException {
+        if (YN.getSelectedToggle() != null) {
+            ContolBD.ejecutar(Transformar.insertOption(ContolBD.hacerArrayPuntuaciones(Transformar.valuesOpcion(listaPreguntasRandom.get(numeroPreguntaArrayListRandom), YN.getSelectedToggle().getUserData().toString()))));
 
-                //Esto se hace para que al dar a la siguiente pregunta, no haya ninguna opcion seleccionada
-                YN.getSelectedToggle().setSelected(false);
+            numeroPreguntaArrayListRandom++;
 
-                startController();
-            } else if (toogleGroup.getSelectedToggle() != null) {
-                ContolBD.ejecutar(Transformar.insertOption(ContolBD.hacerArrayPuntuaciones(Transformar.valuesOpcion(listaPreguntasRandom.get(numeroPreguntaArrayListRandom), toogleGroup.getSelectedToggle().getUserData().toString()))));
-                numeroPreguntaArrayListRandom++;
+            //Esto se hace para que al dar a la siguiente pregunta, no haya ninguna opcion seleccionada
+            YN.getSelectedToggle().setSelected(false);
 
-                //Esto se hace para que al dar a la siguiente pregunta, no haya ninguna opcion seleccionada
-                toogleGroup.getSelectedToggle().setSelected(false);
+            startController();
+        } else if (toogleGroup.getSelectedToggle() != null) {
+            ContolBD.ejecutar(Transformar.insertOption(ContolBD.hacerArrayPuntuaciones(Transformar.valuesOpcion(listaPreguntasRandom.get(numeroPreguntaArrayListRandom), toogleGroup.getSelectedToggle().getUserData().toString()))));
+            numeroPreguntaArrayListRandom++;
 
-                startController();
-            } else {
-                alert.setContentText("Campos vacios, porfavor seleccione una opción para continuar");
-                alert.show();
-            }
+            //Esto se hace para que al dar a la siguiente pregunta, no haya ninguna opcion seleccionada
+            toogleGroup.getSelectedToggle().setSelected(false);
+
+            startController();
+        } else if (btnGroup.getSelectedToggle() != null) {
+            ContolBD.ejecutar(Transformar.insertOption(ContolBD.hacerArrayPuntuaciones(Transformar.valuesOpcion(listaPreguntasRandom.get(numeroPreguntaArrayListRandom), btnGroup.getSelectedToggle().getUserData().toString()))));
+            numeroPreguntaArrayListRandom++;
+
+            //Esto se hace para que al dar a la siguiente pregunta, no haya ninguna opcion seleccionada
+            btnGroup.getSelectedToggle().setSelected(false);
+
+            startController();
+        } else {
+            alert.setContentText("Campos vacios, porfavor seleccione una opción para continuar");
+            alert.show();
+        }
+    }
+
+    void inicializarBotones() {
+        try {
+            si.setUserData("si");
+            no.setUserData("no");
+
+            resp1.setUserData("resp1");
+            resp2.setUserData("resp2");
+            resp3.setUserData("resp3");
+            resp4.setUserData("resp4");
+
+            btn1.setUserData("btn1");
+            btn2.setUserData("btn2");
+            btn3.setUserData("btn3");
+            btn4.setUserData("btn4");
+
+            Node removedNode2 = VBox2resp;
+            Node removedNode4 = VBox4resp;
+            Node removeNodeImg = VBoxImg;
+
+            VboxContainer.getChildren().remove(removedNode2);
+            VboxContainer.getChildren().remove(removedNode4);
+            VboxContainer.getChildren().remove(removeNodeImg);
+        } catch (Exception e) {
+            // TODO: handle exception
         }
     }
 
     public void startController() throws ClassNotFoundException {
         int tipoPregunta = ContolBD.verTipoPregunta(Transformar.tipoPregunta(listaPreguntasRandom.get(numeroPreguntaArrayListRandom)));
-
-        System.out.println(tipoPregunta);
-
-        no.setUserData("no");
-
-        resp1.setUserData("resp1");
-        resp2.setUserData("resp2");
-        resp3.setUserData("resp3");
-        resp4.setUserData("resp4");
-
-        Node removedNode2 = VBox2resp;
-        Node removedNode4 = VBox4resp;
-        Node removeNodeImg= VBoxImg;
-
-        VboxContainer.getChildren().remove(removedNode2);
-        VboxContainer.getChildren().remove(removedNode4);
-        VboxContainer.getChildren().remove(removeNodeImg);
-
         ArrayList<String> listaResult;
+
+        inicializarBotones();
 
 
         try {
-            listaResult = ContolBD.hacerArrayDeConsulta(Transformar.selectRs4(listaPreguntasRandom.get(numeroPreguntaArrayListRandom)));
+            listaResult = ContolBD.hacerUnionDeConsulta(Transformar.selectRs4(listaPreguntasRandom.get(numeroPreguntaArrayListRandom)));
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-
 
 
         switch (tipoPregunta) {
@@ -197,46 +247,7 @@ public class Controlador {
 
                 preguntaid.setText(listaResult.get(0));
 
-                /* estando en una pregunta de tipo imagen necesito
-                *
-                *       1.el nombre de la imagen, alojado en la base de datos
-                *       2.concatenarlo al siguiente constructor:
-                *           File imageFile = new File("../../../../img/"+nombre+".jpg"); // Ruta del archivo local
-                *       3.repetirlo para cada imagen/respuesta
-                *       4. rezar*/
-
-               // for (int i = 0; i <4 ; i++) {}
-
-
-
-
-
-
-                String string1="C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/"+listaResult.get(1)+".jpg";
-                String string2="C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/"+listaResult.get(2)+".jpg";
-                String string3="C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/"+listaResult.get(3)+".jpg";
-                String string4="C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/"+listaResult.get(4)+".jpg";
-
-                Image image1= new Image(string1);
-                Image image2= new Image(string2);
-                Image image3= new Image(string3);
-                Image image4= new Image(string4);
-
-                imgA.setImage(image1);
-                imgB.setImage(image2);
-                imgC.setImage(image3);
-                imgD.setImage(image4);
-
-
-               /*String string1="C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/vaca.jpg";
-                Image image1= new Image(string1);
-                imgA.setImage(image1);
-                imgB.setImage(image1);
-                imgC.setImage(image1);
-                imgD.setImage(image1);*/
-
-                si.setSelected(true);
-
+                pintarImagenes();
                 break;
 
             default:
@@ -246,29 +257,32 @@ public class Controlador {
         //si es la primera pregunta: anterior Disabled
     }
 
-    public void randomInterval() {
-        int min = 1; // valor minimo
-        int max = 13; // valor maximo of the interval, hay que hacerlo automatico
-        int size = 9; // tamaño de la lista
-        ArrayList<Integer> prueba = new ArrayList<>();
-        ArrayList<Integer> listaPreguntasRandomL = new ArrayList<>();
+    void pintarImagenes() {
 
-        prueba.add(13);
-        prueba.add(12);
+        ArrayList<String> listaResult;
 
-        Random random = new Random();
-        while (listaPreguntasRandomL.size() < size) {
-            int number = random.nextInt(max - min + 1) + min;
-            if (!listaPreguntasRandomL.contains(number)) {
-                listaPreguntasRandomL.add(number);
-            }
+        try {
+            listaResult = ContolBD.hacerUnionDeConsulta(Transformar.selectRs4(listaPreguntasRandom.get(numeroPreguntaArrayListRandom)));
+
+            String string1 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(1) + ".jpg";
+            String string2 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(2) + ".jpg";
+            String string3 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(3) + ".jpg";
+            String string4 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(4) + ".jpg";
+
+            Image image1 = new Image(string1);
+            Image image2 = new Image(string2);
+            Image image3 = new Image(string3);
+            Image image4 = new Image(string4);
+
+            imgA.setImage(image1);
+            imgB.setImage(image2);
+            imgC.setImage(image3);
+            imgD.setImage(image4);
+
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
-        listaPreguntasRandom = prueba;
-        //listaPreguntasRandom = listaPreguntasRandomL;
     }
-
-
-
 
     public String calcularPersonaje() {
 

@@ -77,10 +77,13 @@
                                           <image>
                                              <Image url="@piso.jpg" />
                                           </image></ImageView>
-                                       <ToggleButton fx:id="resp1" mnemonicParsing="false" opacity="0.0" prefHeight="125.0" prefWidth="198.0" text="ToggleButton" />
-                                       <ToggleButton fx:id="resp2" minHeight="115.0" minWidth="198.0" mnemonicParsing="false" opacity="0.0" prefHeight="125.0" prefWidth="198.0" text="ToggleButton" GridPane.columnIndex="1" />
-                                       <ToggleButton fx:id="resp3" mnemonicParsing="false" opacity="0.0" prefHeight="125.0" prefWidth="238.0" text="ToggleButton" GridPane.rowIndex="1" />
-                                       <ToggleButton fx:id="resp4" mnemonicParsing="false" opacity="0.0" prefHeight="145.0" prefWidth="169.0" text="ToggleButton" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                       <ToggleButton fx:id="btn1" mnemonicParsing="false" opacity="0.44" prefHeight="125.0" prefWidth="198.0" text="ToggleButton">
+                                          <toggleGroup>
+                                             <ToggleGroup fx:id="btnGroup" />
+                                          </toggleGroup></ToggleButton>
+                                       <ToggleButton fx:id="btn2" minHeight="115.0" minWidth="173.0" mnemonicParsing="false" opacity="0.56" prefHeight="125.0" prefWidth="173.0" text="ToggleButton" toggleGroup="$btnGroup" GridPane.columnIndex="1" />
+                                       <ToggleButton fx:id="btn3" mnemonicParsing="false" opacity="0.55" prefHeight="125.0" prefWidth="238.0" text="ToggleButton" toggleGroup="$btnGroup" GridPane.rowIndex="1" />
+                                       <ToggleButton fx:id="btn4" mnemonicParsing="false" opacity="0.55" prefHeight="125.0" prefWidth="172.0" text="ToggleButton" toggleGroup="$btnGroup" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     </children>
                                  </GridPane>
                               </children>

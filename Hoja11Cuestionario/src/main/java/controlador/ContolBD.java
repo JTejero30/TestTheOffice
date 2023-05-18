@@ -50,7 +50,7 @@ public class ContolBD {
         //System.out.println("Conectado/desconectado");
     }
 
-    public static ArrayList<String> hacerArrayDeConsulta(String sql) throws ClassNotFoundException {
+    public static ArrayList<String> hacerUnionDeConsulta(String sql) throws ClassNotFoundException {
         Connection conexion = null;
         Statement sentenciaSQL = null;
         ResultSet rs;
