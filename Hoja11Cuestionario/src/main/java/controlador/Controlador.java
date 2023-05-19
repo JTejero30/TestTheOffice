@@ -2,6 +2,7 @@ package controlador;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Side;
 import javafx.scene.Node;
 
 
@@ -48,6 +49,29 @@ public class Controlador {
 
     @FXML
     private ToggleButton btn4;
+
+    BackgroundSize backgroundSize = new BackgroundSize(
+            20,
+            10,
+            true,
+            true,
+            false,
+            true
+    );
+    //BackgroundSize(double width, double height, boolean widthAsPercentage, boolean heightAsPercentage,
+    // boolean contain, boolean cover)
+    //javadoc
+
+    BackgroundPosition backgroundPosition= new BackgroundPosition(
+            Side.LEFT,
+            100,
+            true,
+            Side.BOTTOM,
+            100,
+            true
+    );
+    //BackgroundPosition​(Side horizontalSide, double horizontalPosition, boolean horizontalAsPercentage,
+    // Side verticalSide, double verticalPosition, boolean verticalAsPercentage)
 
     @FXML
     private ToggleGroup btnGroup;
@@ -109,10 +133,7 @@ public class Controlador {
         //ArrayList<Integer> prueba = new ArrayList<>();
         ArrayList<Integer> listaPreguntasRandomL = new ArrayList<>();
 
-       // prueba.add(6);
-        //prueba.add(10);
-        //prueba.add(13);
-        //prueba.add(12);
+        //prueba.add(9);
 
 
         Random random = new Random();
@@ -276,13 +297,13 @@ public class Controlador {
             Image image4 = new Image(string4);
 
             BackgroundImage fondoOpcion1 = new BackgroundImage(image1, BackgroundRepeat.NO_REPEAT,
-                    BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+                    BackgroundRepeat.NO_REPEAT,  backgroundPosition, backgroundSize);
             BackgroundImage fondoOpcion2 = new BackgroundImage(image2, BackgroundRepeat.NO_REPEAT,
-                    BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+                    BackgroundRepeat.NO_REPEAT, backgroundPosition,backgroundSize);
             BackgroundImage fondoOpcion3 = new BackgroundImage(image3, BackgroundRepeat.NO_REPEAT,
-                    BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+                    BackgroundRepeat.NO_REPEAT, backgroundPosition, backgroundSize);
             BackgroundImage fondoOpcion4 = new BackgroundImage(image4, BackgroundRepeat.NO_REPEAT,
-                    BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+                    BackgroundRepeat.NO_REPEAT, backgroundPosition, backgroundSize);
 
             /*imgA.setImage(image1);
             imgB.setImage(image2);
@@ -292,6 +313,7 @@ public class Controlador {
             btn2.setBackground(new Background(fondoOpcion2));
             btn3.setBackground(new Background(fondoOpcion3));
             btn4.setBackground(new Background(fondoOpcion4));
+
 
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);

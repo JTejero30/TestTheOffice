@@ -5,8 +5,6 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
@@ -98,46 +96,26 @@
                      <children>
                         <StackPane prefHeight="150.0" prefWidth="200.0" styleClass="cardBorder">
                            <children>
-                              <ToggleButton fx:id="btn1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="182.0" prefWidth="322.0" styleClass="buttonResp" text="ToggleButton">
+                              <ToggleButton fx:id="btn1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="182.0" prefWidth="322.0" styleClass="buttonResp">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="btnGroup" />
                                  </toggleGroup>
                               </ToggleButton>
-                              <ImageView fx:id="imgA" fitHeight="152.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../img/gato.jpg" />
-                                 </image>
-                              </ImageView>
                            </children>
                         </StackPane>
                         <StackPane prefHeight="150.0" prefWidth="200.0" styleClass="cardBorder" GridPane.columnIndex="1">
                            <children>
-                              <ToggleButton fx:id="btn2" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="143.0" prefWidth="225.0" styleClass="buttonResp" text="ToggleButton" toggleGroup="$btnGroup" />
-                              <ImageView fx:id="imgB" fitHeight="140.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../img/leon.jpg" />
-                                 </image>
-                              </ImageView>
+                              <ToggleButton fx:id="btn2" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="143.0" prefWidth="225.0" styleClass="buttonResp" toggleGroup="$btnGroup" />
                            </children>
                         </StackPane>
                         <StackPane prefHeight="150.0" prefWidth="200.0" styleClass="cardBorder" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <children>
-                              <ToggleButton fx:id="btn4" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="172.0" prefWidth="302.0" styleClass="buttonResp" text="ToggleButton" toggleGroup="$btnGroup" />
-                              <ImageView fx:id="imgD" fitHeight="140.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../img/vaca.jpg" />
-                                 </image>
-                              </ImageView>
+                              <ToggleButton fx:id="btn4" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="172.0" prefWidth="302.0" styleClass="buttonResp" toggleGroup="$btnGroup" />
                            </children>
                         </StackPane>
                         <StackPane prefHeight="150.0" prefWidth="200.0" styleClass="cardBorder" GridPane.rowIndex="1">
                            <children>
-                              <ToggleButton fx:id="btn3" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefHeight="194.0" prefWidth="331.0" styleClass="buttonResp" text="ToggleButton" toggleGroup="$btnGroup" />
-                              <ImageView fx:id="imgC" fitHeight="140.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../img/perro.jpg" />
-                                 </image>
-                              </ImageView>
+                              <ToggleButton fx:id="btn3" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefHeight="194.0" prefWidth="331.0" styleClass="buttonResp" toggleGroup="$btnGroup" />
                            </children>
                         </StackPane>
                      </children>
