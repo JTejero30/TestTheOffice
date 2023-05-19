@@ -6,16 +6,18 @@ import javafx.geometry.Side;
 import javafx.scene.Node;
 
 
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 
+import javafx.scene.effect.Blend;
+import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import modelo.Transformar;
+
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -110,6 +112,9 @@ public class Controlador {
     private ToggleButton resp4;
 
     @FXML
+    private ButtonBar buttonBar;
+
+    @FXML
     private ToggleButton si;
 
     @FXML
@@ -117,6 +122,11 @@ public class Controlador {
 
     @FXML
     private ToggleGroup toogleGroup;
+
+    Blend blend;
+    InputStream fontInputStream = getClass().getResourceAsStream("clutsy.ttf");
+    Font customFont = Font.loadFont(fontInputStream, 20);
+//    Font customFont = Font.loadFont(getClass().getResource("clutsy.ttf").toString(), 18);
 
 
     private Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -234,10 +244,14 @@ public class Controlador {
     }
 
     public void startController() throws ClassNotFoundException {
+
+        ButtonBar.setButtonData(buttonAnterior, ButtonBar.ButtonData.LEFT);
+        ButtonBar.setButtonData(siguientePregunta, ButtonBar.ButtonData.RIGHT);
+
         int tipoPregunta = ContolBD.verTipoPregunta(Transformar.tipoPregunta(listaPreguntasRandom.get(numeroPreguntaArrayListRandom)));
         ArrayList<String> listaResult;
-
         inicializarBotones();
+        //preguntaid.setFont(customFont);
 
 
         try {
@@ -252,6 +266,7 @@ public class Controlador {
                 VboxContainer.getChildren().add(VBox4resp);
 
                 preguntaid.setText(listaResult.get(0));
+
                 resp1.setText(listaResult.get(1));
                 resp2.setText(listaResult.get(2));
                 resp3.setText(listaResult.get(3));
@@ -273,6 +288,11 @@ public class Controlador {
                 break;
 
             default:
+
+                VboxContainer.getChildren().add(VBoxImg);
+
+                preguntaid.setText("hola");
+               // pintarImagenes();
                 break;
         }
         buttonAnterior.setDisable(numeroPreguntaArrayListRandom <= 0);
@@ -286,10 +306,17 @@ public class Controlador {
         try {
             listaResult = ContolBD.hacerUnionDeConsulta(Transformar.selectRs4(listaPreguntasRandom.get(numeroPreguntaArrayListRandom)));
 
-            String string1 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(1) + ".jpg";
-            String string2 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(2) + ".jpg";
-            String string3 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(3) + ".jpg";
-            String string4 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(4) + ".jpg";
+//            String string1 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(1) + ".jpg";
+//            String string2 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(2) + ".jpg";
+//            String string3 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(3) + ".jpg";
+//            String string4 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(4) + ".jpg";
+
+            String string1 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
+            String string2 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
+            String string3 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
+            String string4 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
+
+
 
             Image image1 = new Image(string1);
             Image image2 = new Image(string2);
@@ -355,4 +382,10 @@ public class Controlador {
         }
         return personajeGanador;
     }
+
+    @FXML
+    void selectImg(ActionEvent event) {
+
+    }
+
 }

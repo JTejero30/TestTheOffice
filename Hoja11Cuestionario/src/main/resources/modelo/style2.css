@@ -1,20 +1,136 @@
-.Cpregunta{
-    -fx-font-family: "JetBrains Mono ExtraBold";
-    -fx-font-size:15px;
-    -fx-wrap-text: true;
+.Cpregunta {
+    /*-fx-font-family: "JetBrains Mono ExtraBold";*/
+    /*-fx-font-size: 15px;*/
+    /*-fx-wrap-text: true;*/
+    /*-fx-background-color: #e8e8e8;*/
+
 }
 
-.CssRespuesta{
+.vBoxPrincipal {
 
-    //-fx-vgap: 100px;
-    -fx-alignment:center-left;
-   // -fx-background-color: red;
+    -fx-background-image: url("fondo.png");
+    -fx-background-repeat: no-repeat;
+    -fx-opacity: 0.9;
+
+    /*-fx-background-size: cover;*/
+    /*-fx-background-position: center center;*/
+    -fx-background-position: 50% 95%; /* Mover la imagen hacia la derecha */
+    -fx-background-size: 107%; /* Reducir el tamaño de la imagen */
 }
 
-.CssRd{
-   // -fx-alignment:top-center;
+.PanePregunta {
+    -fx-border-color: black;
+    -fx-border-width: 0 0 2 0;
+
 }
 
-.CssHboxButton{
-    -fx-alignment:center;
+.top {
+    -fx-background-color: linear-gradient(to bottom, #ffb361, #ffd699);
+}
+
+.cardBorder {
+    -fx-border-color: black;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-radius: 10;
+
+    -fx-background-color: linear-gradient(to bottom, rgba(253, 176, 147, 0.9), rgba(242, 118, 109, 0.9));
+    -fx-background-radius: 5px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.buttonResp {
+    /*!*-fx-background-color:*!*/
+    /*!*        #3c7fb1,*!*/
+    /*!*        linear-gradient(#fafdfe, #e8f5fc),*!*/
+    /*!*        linear-gradient(#eaf6fd 0%, #d9f0fc 49%, #bee6fd 50%, #a7d9f5 100%);*!*/
+    /*!*-fx-background-insets: 0,1,2;*!*/
+    /*!*-fx-background-radius: 3,2,1;*!*/
+    /*-fx-padding: 3 30 3 30;*/
+    /*-fx-text-fill: black;*/
+    /*-fx-font-size: 14px;*/
+    -fx-border-color: #ff0000;
+    -fx-border-width: 0px;
+    -fx-background-color: #33333300;
+    -fx-cursor: hand;
+
+}
+
+.buttonImg {
+
+    -fx-background-image: url("granja.jpg");
+    /*-fx-background-repeat: no-repeat;*/
+    -fx-background-size: cover;
+    /*-fx-background-position: center center;*/
+    /*-fx-background-position: 65% center; !* Mover la imagen hacia la derecha *!*/
+    /*-fx-background-size: 107%; !* Reducir el tamaño de la imagen *!*/
+
+}
+.buttonResp:hover {
+    /*-fx-background-color: red;*/
+
+
+
+    -fx-translate-y: -2px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 3, 0, 0, 1);
+}
+/**/
+.buttonResp:selected {
+    /*-fx-background-color: red;*/
+    -fx-background-color: linear-gradient(to bottom, rgba(242, 118, 109, 0.8), rgba(253, 176, 147, 0.8));
+    -fx-text-fill: #fff;
+
+}
+
+.buttonImg:selected {
+
+
+    /*-fx-background-image:none;*/
+    -fx-background-color: rgba(0, 0, 0, 0.6); /* Adjust the last value (0.5) for desired transparency */
+    /*-fx-background-image: url("granja.jpg");*/
+    -fx-opacity: 0.6;
+}
+
+.img {
+    -fx-cursor: hand;
+    /*-fx-border-color: black;*/
+    /*-fx-border-width: 1px;*/
+    /*-fx-border-radius: 5px;*/
+    /*-fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 0);*/
+}
+
+
+.buttonSiguiente{
+    -fx-background-color: linear-gradient(to bottom, #f2766d, #fdb093);
+    -fx-background-radius: 5px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-insets: 0, 0 0 2 0;
+}
+
+.buttonSiguiente:hover{
+    -fx-cursor: hand;
+    /*-fx-background-color: linear-gradient(to bottom, #ff917b, #ffa46f);*/
+
+    -fx-background-color: linear-gradient(to bottom, #ff917b, #ffa46f);
+    -fx-translate-y: -2px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 3, 0, 0, 1);
+
+}
+
+.buttonAnterior{
+    -fx-background-color: linear-gradient(to bottom, #f2766d, #fdb093);
+    -fx-background-radius: 5px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.buttonAnterior:hover{
+    -fx-cursor: hand;
+    /*-fx-background-color: linear-gradient(to bottom, #ff917b, #ffa46f);*/
+
+    -fx-background-color: linear-gradient(to bottom, #ff917b, #ffa46f);
+    -fx-translate-y: -2px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 3, 0, 0, 1);
+
 }
