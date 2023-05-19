@@ -23,7 +23,7 @@ Personajes:
 FORMAS DE PREGUNTAR
 1-Imagenes (elige una imagen)
 	1.1.Elige una casa
-		-rural													Dwight +2
+		-granja													Dwight +2
 		-Lujo													Andy +2, Oscar +1
 		-Piso														
 		-infantil												MIchael +2, Jim +1 		
@@ -31,12 +31,12 @@ FORMAS DE PREGUNTAR
 		-Fiesta													Meredith+3, Michael+1, Stanley+1
 		-Comer 													Kevin +3, Oscar+1
 		-Familia												Pam +3, Jim +2, Angela+2
-		-Casa solo												Creed +2, Dwight+3, Darryl +1
+		-Casa solo												Creed +2, Dwight+3
 	1.3.¿Que sueles beber mientras trabajas?
 		-Cafe													Michael+2, Pam +3, Stanley+2
 		-Snacks													Kevin +3	
 		-Cerveza												Meredith+3
-		-Nada, me gusta concentrarme							Dwight +3
+		-Agua													Dwight +3
 	1.4 ¿Que te comerias en el descanso del trabajo?
 		-Ensalada												Angela+3, Pam+2,
 		-Mesa sofisticada degustacion							Oscar+3, Pam+2, Kevin+1, Andy+1
@@ -46,6 +46,7 @@ FORMAS DE PREGUNTAR
 		-Vaca													Dwight+4
 		-Gato 													Angela+4
 		-Perro													Oscar+3	
+		-Leon													Michael+2, andy+2, Dwight+2
 2-Respuesta si/no
 	2.1.Bebes alcohol											
 		-Yes													Meredith+3, Creed+2, Darryl+1, Andy+1

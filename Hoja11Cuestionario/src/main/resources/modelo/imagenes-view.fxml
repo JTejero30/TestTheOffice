@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox fx:id="groupid" alignment="CENTER" maxHeight="400.0" minHeight="400.0" minWidth="400.0" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ImagenesControl">
+<VBox fx:id="groupid" alignment="CENTER" maxHeight="400.0" minHeight="400.0" minWidth="400.0" spacing="20.0" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ImagenesControl">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>

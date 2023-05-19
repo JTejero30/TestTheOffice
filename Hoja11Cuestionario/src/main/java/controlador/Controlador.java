@@ -12,35 +12,31 @@ import javafx.scene.control.ToggleGroup;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import modelo.Transformar;
-
 import java.util.ArrayList;
 import java.util.Random;
 
+//Puede ser que tengamos que hacer una doble inclusion de hijo en padre
+// donde antes un boton se incluia en un VBox directamente ahora se incluye en un pane previamente
 
 public class Controlador {
 
     @FXML
-    private VBox VBox2resp;
+    private HBox VBox2resp;
 
     @FXML
-    private VBox VBox4resp;
+    private GridPane VBox4resp;
+    @FXML
+    private GridPane VBoxImg;
 
     @FXML
-    private VBox VBoxImg;
-    @FXML
-    private ImageView imgA;
+    private VBox VboxContainer;
 
     @FXML
-    private ImageView imgB;
+    private ToggleGroup YN;
 
-    @FXML
-    private ImageView imgC;
-
-    @FXML
-    private ImageView imgD;
     @FXML
     private ToggleButton btn1;
 
@@ -57,13 +53,19 @@ public class Controlador {
     private ToggleGroup btnGroup;
 
     @FXML
-    private VBox VboxContainer;
-
-    @FXML
-    private ToggleGroup YN;
-
-    @FXML
     private Button buttonAnterior;
+
+    @FXML
+    private ImageView imgA;
+
+    @FXML
+    private ImageView imgB;
+
+    @FXML
+    private ImageView imgC;
+
+    @FXML
+    private ImageView imgD;
 
     @FXML
     private ToggleButton no;
@@ -87,9 +89,11 @@ public class Controlador {
     private ToggleButton si;
 
     @FXML
-    private ToggleGroup toogleGroup;
-    @FXML
     private Button siguientePregunta;
+
+    @FXML
+    private ToggleGroup toogleGroup;
+
 
     private Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
@@ -271,10 +275,23 @@ public class Controlador {
             Image image3 = new Image(string3);
             Image image4 = new Image(string4);
 
-            imgA.setImage(image1);
+            BackgroundImage fondoOpcion1 = new BackgroundImage(image1, BackgroundRepeat.NO_REPEAT,
+                    BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+            BackgroundImage fondoOpcion2 = new BackgroundImage(image2, BackgroundRepeat.NO_REPEAT,
+                    BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+            BackgroundImage fondoOpcion3 = new BackgroundImage(image3, BackgroundRepeat.NO_REPEAT,
+                    BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+            BackgroundImage fondoOpcion4 = new BackgroundImage(image4, BackgroundRepeat.NO_REPEAT,
+                    BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+
+            /*imgA.setImage(image1);
             imgB.setImage(image2);
             imgC.setImage(image3);
-            imgD.setImage(image4);
+            imgD.setImage(image4);*/
+            btn1.setBackground(new Background(fondoOpcion1));
+            btn2.setBackground(new Background(fondoOpcion2));
+            btn3.setBackground(new Background(fondoOpcion3));
+            btn4.setBackground(new Background(fondoOpcion4));
 
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
