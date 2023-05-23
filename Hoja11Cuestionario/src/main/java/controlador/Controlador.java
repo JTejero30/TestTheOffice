@@ -8,10 +8,7 @@ import javafx.scene.Node;
 
 import javafx.scene.control.*;
 
-import javafx.scene.effect.Blend;
-import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -82,18 +79,6 @@ public class Controlador {
     private Button buttonAnterior;
 
     @FXML
-    private ImageView imgA;
-
-    @FXML
-    private ImageView imgB;
-
-    @FXML
-    private ImageView imgC;
-
-    @FXML
-    private ImageView imgD;
-
-    @FXML
     private ToggleButton no;
 
     @FXML
@@ -111,8 +96,6 @@ public class Controlador {
     @FXML
     private ToggleButton resp4;
 
-    @FXML
-    private ButtonBar buttonBar;
 
     @FXML
     private ToggleButton si;
@@ -123,7 +106,6 @@ public class Controlador {
     @FXML
     private ToggleGroup toogleGroup;
 
-    Blend blend;
     InputStream fontInputStream = getClass().getResourceAsStream("clutsy.ttf");
     Font customFont = Font.loadFont(fontInputStream, 20);
 //    Font customFont = Font.loadFont(getClass().getResource("clutsy.ttf").toString(), 18);
@@ -288,11 +270,11 @@ public class Controlador {
                 break;
 
             default:
-
-                VboxContainer.getChildren().add(VBoxImg);
-
-                preguntaid.setText("hola");
-               // pintarImagenes();
+//
+//                VboxContainer.getChildren().add(VBoxImg);
+//
+//                preguntaid.setText("hola");
+//                pintarImagenes();
                 break;
         }
         buttonAnterior.setDisable(numeroPreguntaArrayListRandom <= 0);
@@ -306,15 +288,15 @@ public class Controlador {
         try {
             listaResult = ContolBD.hacerUnionDeConsulta(Transformar.selectRs4(listaPreguntasRandom.get(numeroPreguntaArrayListRandom)));
 
-//            String string1 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(1) + ".jpg";
-//            String string2 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(2) + ".jpg";
-//            String string3 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(3) + ".jpg";
-//            String string4 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(4) + ".jpg";
+            String string1 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(1) + ".jpg";
+            String string2 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(2) + ".jpg";
+            String string3 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(3) + ".jpg";
+            String string4 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(4) + ".jpg";
 
-            String string1 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
-            String string2 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
-            String string3 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
-            String string4 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
+//            String string1 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
+//            String string2 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
+//            String string3 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
+//            String string4 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
 
 
 
@@ -381,11 +363,6 @@ public class Controlador {
             default -> personajeGanador = "null";
         }
         return personajeGanador;
-    }
-
-    @FXML
-    void selectImg(ActionEvent event) {
-
     }
 
 }

@@ -101,7 +101,7 @@
                      <children>
                         <StackPane prefHeight="150.0" prefWidth="200.0" styleClass="cardBorder">
                            <children>
-                              <ToggleButton fx:id="btn1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#selectImg" prefHeight="182.0" prefWidth="322.0">
+                              <ToggleButton fx:id="btn1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="182.0" prefWidth="322.0">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="btnGroup" />
                                  </toggleGroup>
