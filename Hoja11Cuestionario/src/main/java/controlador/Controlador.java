@@ -231,6 +231,37 @@ public class Controlador {
             btn3.setUserData("resp3");
             btn4.setUserData("resp4");
 
+            no.setMaxWidth(Double.MAX_VALUE);
+            no.setMinWidth(Region.USE_PREF_SIZE);
+
+            si.setMaxWidth(Double.MAX_VALUE);
+            si.setMinWidth(Region.USE_PREF_SIZE);
+
+            resp1.setMaxWidth(Double.MAX_VALUE);
+            resp1.setMinWidth(Region.USE_PREF_SIZE);
+
+            resp1.setMaxHeight(Double.MAX_VALUE);
+            resp1.setMinHeight(Region.USE_PREF_SIZE);
+
+            resp2.setMaxWidth(Double.MAX_VALUE);
+            resp2.setMinWidth(Region.USE_PREF_SIZE);
+
+            resp2.setMaxHeight(Double.MAX_VALUE);
+            resp2.setMinHeight(Region.USE_PREF_SIZE);
+
+            resp3.setMaxWidth(Double.MAX_VALUE);
+            resp3.setMinWidth(Region.USE_PREF_SIZE);
+
+            resp3.setMaxHeight(Double.MAX_VALUE);
+            resp3.setMinHeight(Region.USE_PREF_SIZE);
+
+
+            resp4.setMaxWidth(Double.MAX_VALUE);
+            resp4.setMinWidth(Region.USE_PREF_SIZE);
+
+            resp4.setMaxHeight(Double.MAX_VALUE);
+            resp4.setMinHeight(Region.USE_PREF_SIZE);
+
             Node removedNode2 = VBox2resp;
             Node removedNode4 = VBox4resp;
             Node removeNodeImg = VBoxImg;
@@ -238,6 +269,7 @@ public class Controlador {
             VboxContainer.getChildren().remove(removedNode2);
             VboxContainer.getChildren().remove(removedNode4);
             VboxContainer.getChildren().remove(removeNodeImg);
+
         } catch (Exception e) {
             // TODO: handle exception
         }
@@ -289,9 +321,9 @@ public class Controlador {
 
             default:
 
-                VboxContainer.getChildren().add(VBoxImg);
-
-                preguntaid.setText("hola");
+//                VboxContainer.getChildren().add(VBoxImg);
+//
+//                preguntaid.setText("hola");
                // pintarImagenes();
                 break;
         }
@@ -306,15 +338,16 @@ public class Controlador {
         try {
             listaResult = ContolBD.hacerUnionDeConsulta(Transformar.selectRs4(listaPreguntasRandom.get(numeroPreguntaArrayListRandom)));
 
-//            String string1 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(1) + ".jpg";
-//            String string2 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(2) + ".jpg";
-//            String string3 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(3) + ".jpg";
-//            String string4 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(4) + ".jpg";
+            String string1 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(1) + ".jpg";
+            String string2 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(2) + ".jpg";
+            String string3 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(3) + ".jpg";
+            String string4 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(4) + ".jpg";
+            System.out.println(string1);
 
-            String string1 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
-            String string2 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
-            String string3 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
-            String string4 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
+//            String string1 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
+//            String string2 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
+//            String string3 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
+//            String string4 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
 
 
 
@@ -383,9 +416,6 @@ public class Controlador {
         return personajeGanador;
     }
 
-    @FXML
-    void selectImg(ActionEvent event) {
 
-    }
 
 }
