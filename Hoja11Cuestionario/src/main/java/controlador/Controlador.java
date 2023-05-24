@@ -37,20 +37,9 @@ public class Controlador {
     @FXML
     private VBox VboxContainer;
 
-    @FXML
-    private ToggleGroup YN;
 
-    @FXML
-    private ToggleButton btn1;
 
-    @FXML
-    private ToggleButton btn2;
 
-    @FXML
-    private ToggleButton btn3;
-
-    @FXML
-    private ToggleButton btn4;
 
     BackgroundSize backgroundSize = new BackgroundSize(
             20,
@@ -79,19 +68,23 @@ public class Controlador {
     private ToggleGroup btnGroup;
 
     @FXML
+    private ToggleGroup toogleGroup;
+    @FXML
+    private ToggleGroup YN;
+    @FXML
     private Button buttonAnterior;
 
     @FXML
-    private ImageView imgA;
+    private ToggleButton btn1;
 
     @FXML
-    private ImageView imgB;
+    private ToggleButton btn2;
 
     @FXML
-    private ImageView imgC;
+    private ToggleButton btn3;
 
     @FXML
-    private ImageView imgD;
+    private ToggleButton btn4;
 
     @FXML
     private ToggleButton no;
@@ -120,8 +113,7 @@ public class Controlador {
     @FXML
     private Button siguientePregunta;
 
-    @FXML
-    private ToggleGroup toogleGroup;
+
 
     Blend blend;
     InputStream fontInputStream = getClass().getResourceAsStream("clutsy.ttf");

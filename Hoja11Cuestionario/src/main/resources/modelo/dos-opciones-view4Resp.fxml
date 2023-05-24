@@ -55,19 +55,19 @@
                         </StackPane>
                         <StackPane prefHeight="150.0" prefWidth="200.0" styleClass="cardBorder" GridPane.columnIndex="1" GridPane.hgrow="NEVER">
                            <children>
-                              <ToggleButton fx:id="resp2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="buttonResp" text="ToggleButton" wrapText="true" toggleGroup="$toogleGroup" />
+                              <ToggleButton fx:id="resp2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="buttonResp" text="ToggleButton" toggleGroup="$toogleGroup" wrapText="true" />
 
                            </children>
                         </StackPane>
                         <StackPane maxHeight="1.7976931348623157E308" prefHeight="150.0" prefWidth="200.0" styleClass="cardBorder" GridPane.hgrow="NEVER" GridPane.rowIndex="1">
                            <children>
-                              <ToggleButton fx:id="resp3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="buttonResp" text="ToggleButton" wrapText="true" toggleGroup="$toogleGroup" />
+                              <ToggleButton fx:id="resp3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="buttonResp" text="ToggleButton" toggleGroup="$toogleGroup" wrapText="true" />
 
                            </children>
                         </StackPane>
                         <StackPane maxHeight="1.7976931348623157E308" prefHeight="150.0" prefWidth="200.0" styleClass="cardBorder" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="1">
                            <children>
-                              <ToggleButton fx:id="resp4" mnemonicParsing="false" prefHeight="26.0" prefWidth="233.0" styleClass="buttonResp" text="ToggleButton" wrapText="true" toggleGroup="$toogleGroup" />
+                              <ToggleButton fx:id="resp4" mnemonicParsing="false" prefHeight="26.0" prefWidth="233.0" styleClass="buttonResp" text="ToggleButton" toggleGroup="$toogleGroup" wrapText="true" />
 
                            </children>
                         </StackPane>
