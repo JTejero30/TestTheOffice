@@ -19,8 +19,8 @@
 }
 
 .PanePregunta {
-    -fx-border-color: black;
-    -fx-border-width: 0 0 2 0;
+    /*-fx-border-color: black;*/
+    /*-fx-border-width: 0 0 2 0;*/
 
 }
 
@@ -37,6 +37,7 @@
     -fx-background-radius: 5px;
     -fx-text-fill: white;
     -fx-font-weight: bold;
+
 }
 
 .buttonResp {
@@ -138,5 +139,26 @@
     -fx-background-color: linear-gradient(to bottom, #ff917b, #ffa46f);
     -fx-translate-y: -2px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 3, 0, 0, 1);
+
+}
+.paneImagen{
+    -fx-background-image: url("fondoInicio.png");
+    -fx-background-repeat: no-repeat;
+    -fx-opacity: 0.9;
+
+    /*-fx-background-size: cover;*/
+    /*-fx-background-position: center center;*/
+    /*-fx-background-position: 50% 95%; !* Mover la imagen hacia la derecha *!*/
+    /*-fx-background-size: 107%; !* Reducir el tamaño de la imagen *!*/
+}
+.paneImagenFin{
+    -fx-background-image: url("fondoFin.png");
+    -fx-background-repeat: no-repeat;
+    -fx-opacity: 0.9;
+
+    /*-fx-background-size: cover;*/
+    /*-fx-background-position: center center;*/
+    /*-fx-background-position: 50% 95%; !* Mover la imagen hacia la derecha *!*/
+    /*-fx-background-size: 107%; !* Reducir el tamaño de la imagen *!*/
 
 }

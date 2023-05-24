@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<FlowPane alignment="TOP_CENTER" maxHeight="616.0" maxWidth="880.0" minHeight="616.0" minWidth="880.0" prefHeight="616.0" prefWidth="880.0" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.Controlador">
+   <children>
+      <Pane prefHeight="620.0" prefWidth="884.0" styleClass="paneImagenFin" stylesheets="@style2.css">
+         <children>
+            <Button layoutX="227.0" layoutY="491.0" mnemonicParsing="false" onAction="#resetTestA" prefHeight="56.0" prefWidth="444.0" text="Reiniciar test">
+               <font>
+                  <Font name="Rockwell" size="29.0" />
+               </font>
+            </Button>
+            <Text fx:id="textoGanador" layoutX="302.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personaje nombre">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="imgFinal" fitHeight="342.0" fitWidth="440.0" layoutX="222.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@fondoFin.png" />
+               </image></ImageView>
+         </children>
+      </Pane>
+   </children>
+</FlowPane>

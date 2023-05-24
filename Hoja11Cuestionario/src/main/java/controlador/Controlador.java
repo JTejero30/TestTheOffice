@@ -2,22 +2,27 @@ package controlador;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Side;
 import javafx.scene.Node;
 
 
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 
 import javafx.scene.effect.Blend;
-import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import modelo.Transformar;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -27,8 +32,11 @@ import java.util.Random;
 public class Controlador {
 
     @FXML
+    private Button resetTest;
+    @FXML
     private HBox VBox2resp;
-
+    @FXML
+    private FlowPane mainFlowPain;
     @FXML
     private GridPane VBox4resp;
     @FXML
@@ -36,9 +44,6 @@ public class Controlador {
 
     @FXML
     private VBox VboxContainer;
-
-
-
 
 
     BackgroundSize backgroundSize = new BackgroundSize(
@@ -53,7 +58,7 @@ public class Controlador {
     // boolean contain, boolean cover)
     //javadoc
 
-    BackgroundPosition backgroundPosition= new BackgroundPosition(
+    BackgroundPosition backgroundPosition = new BackgroundPosition(
             Side.LEFT,
             100,
             true,
@@ -100,7 +105,10 @@ public class Controlador {
 
     @FXML
     private ToggleButton resp3;
-
+    @FXML
+    private VBox mainVbox;
+    @FXML
+    private Pane paneFinal;
     @FXML
     private ToggleButton resp4;
 
@@ -113,6 +121,21 @@ public class Controlador {
     @FXML
     private Button siguientePregunta;
 
+    private String stringNull = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/agua.jpg";
+
+    private Image image1Null = new Image(stringNull);
+
+    @FXML
+    private ImageView imgFinal;
+
+    @FXML
+    private Text textoGanador;
+
+    private Node removeNodePaneFinal = paneFinal;
+
+    private Node removeNodeMainVbox = mainVbox;
+
+    private int numPreguntas=12;
 
 
     Blend blend;
@@ -126,12 +149,12 @@ public class Controlador {
     private String personajeGanador;
     private ArrayList<Integer> listaPreguntasRandom;
     //Aqui importante cambiarlo, que es donde empieza siempre la pregunta
-    private int numeroPreguntaArrayListRandom=0;
+    private int numeroPreguntaArrayListRandom = 0;
 
     public void randomInterval() {
         int min = 1; // valor minimo
-        int max = 13; // valor maximo of the interval, hay que hacerlo automatico
-        int size = 12; // tamaño de la lista
+        int max = 18; // valor maximo of the interval, hay que hacerlo automatico
+        int size = numPreguntas; // tamaño de la lista
         //ArrayList<Integer> prueba = new ArrayList<>();
         ArrayList<Integer> listaPreguntasRandomL = new ArrayList<>();
 
@@ -157,17 +180,40 @@ public class Controlador {
     }
 
     @FXML
-    void siguientePregunta(ActionEvent event) throws ClassNotFoundException {
+    void siguientePregunta(ActionEvent event) throws ClassNotFoundException, IOException {
 
 
-        if (numeroPreguntaArrayListRandom >= 11) {
+        if (numeroPreguntaArrayListRandom >= numPreguntas-1) {
             siguientePregunta.setText("Finalizar");
 
             System.out.println(calcularPersonaje());
 
             //limpiamos la tabla puntuaciones
-            ContolBD.ejecutar("DELETE FROM personajes");
 
+
+            Node removeNodeMainVbox = mainVbox;
+            Node removeNodePaneFinal = paneFinal;
+
+
+            mainFlowPain.getChildren().remove(removeNodeMainVbox);
+            mainFlowPain.getChildren().add(removeNodePaneFinal);
+            String string1 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/gif/" +calcularPersonaje() + ".gif";
+
+//            String string1 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/agua.jpg";
+
+            Image image1 = new Image(string1);
+
+            System.out.println(string1);
+
+            imgFinal.setImage(image1);
+
+            // Change the FXML element in the new view
+
+
+            textoGanador.setText(calcularPersonaje());
+
+
+            ContolBD.ejecutar("DELETE FROM personajes");
             //System.out.println("Eres" + personajeGanador);
 
         } else {
@@ -179,7 +225,7 @@ public class Controlador {
     void comprobarClickado() throws ClassNotFoundException {
         if (YN.getSelectedToggle() != null) {
             ContolBD.ejecutar(Transformar.insertOption(ContolBD.hacerArrayPuntuaciones(Transformar.valuesOpcion(listaPreguntasRandom.get(numeroPreguntaArrayListRandom), YN.getSelectedToggle().getUserData().toString()))));
-
+            System.out.println();
             numeroPreguntaArrayListRandom++;
 
             //Esto se hace para que al dar a la siguiente pregunta, no haya ninguna opcion seleccionada
@@ -257,10 +303,16 @@ public class Controlador {
             Node removedNode2 = VBox2resp;
             Node removedNode4 = VBox4resp;
             Node removeNodeImg = VBoxImg;
+            removeNodeMainVbox = mainVbox;
+            removeNodePaneFinal = paneFinal;
+
 
             VboxContainer.getChildren().remove(removedNode2);
             VboxContainer.getChildren().remove(removedNode4);
             VboxContainer.getChildren().remove(removeNodeImg);
+//          mainFlowPain.getChildren().remove(removeNodeMainVbox);
+            mainFlowPain.getChildren().remove(removeNodePaneFinal);
+
 
         } catch (Exception e) {
             // TODO: handle exception
@@ -316,7 +368,7 @@ public class Controlador {
 //                VboxContainer.getChildren().add(VBoxImg);
 //
 //                preguntaid.setText("hola");
-               // pintarImagenes();
+                // pintarImagenes();
                 break;
         }
         buttonAnterior.setDisable(numeroPreguntaArrayListRandom <= 0);
@@ -330,16 +382,15 @@ public class Controlador {
         try {
             listaResult = ContolBD.hacerUnionDeConsulta(Transformar.selectRs4(listaPreguntasRandom.get(numeroPreguntaArrayListRandom)));
 
-//            String string1 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(1) + ".jpg";
-//            String string2 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(2) + ".jpg";
-//            String string3 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(3) + ".jpg";
-//            String string4 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(4) + ".jpg";
-//            System.out.println(string1);
+            String string1 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(1) + ".jpg";
+            String string2 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(2) + ".jpg";
+            String string3 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(3) + ".jpg";
+            String string4 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(4) + ".jpg";
 
-             String string1 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(1) + ".jpg";
-            String string2 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(2) + ".jpg";
-            String string3 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(3) + ".jpg";
-            String string4 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(4) + ".jpg";
+//             String string1 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(1) + ".jpg";
+//            String string2 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(2) + ".jpg";
+//            String string3 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(3) + ".jpg";
+//            String string4 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(4) + ".jpg";
 
 
             Image image1 = new Image(string1);
@@ -347,10 +398,11 @@ public class Controlador {
             Image image3 = new Image(string3);
             Image image4 = new Image(string4);
 
+
             BackgroundImage fondoOpcion1 = new BackgroundImage(image1, BackgroundRepeat.NO_REPEAT,
-                    BackgroundRepeat.NO_REPEAT,  backgroundPosition, backgroundSize);
+                    BackgroundRepeat.NO_REPEAT, backgroundPosition, backgroundSize);
             BackgroundImage fondoOpcion2 = new BackgroundImage(image2, BackgroundRepeat.NO_REPEAT,
-                    BackgroundRepeat.NO_REPEAT, backgroundPosition,backgroundSize);
+                    BackgroundRepeat.NO_REPEAT, backgroundPosition, backgroundSize);
             BackgroundImage fondoOpcion3 = new BackgroundImage(image3, BackgroundRepeat.NO_REPEAT,
                     BackgroundRepeat.NO_REPEAT, backgroundPosition, backgroundSize);
             BackgroundImage fondoOpcion4 = new BackgroundImage(image4, BackgroundRepeat.NO_REPEAT,
@@ -407,6 +459,50 @@ public class Controlador {
         return personajeGanador;
     }
 
+    @FXML
+    void startTestA(ActionEvent event) throws IOException, ClassNotFoundException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/modelo/dos-opciones-view4Resp.fxml"));
+
+        Parent newRoot = loader.load();
+
+        Controlador controller = loader.getController();
+
+        // Call a method on the new controller
+        controller.randomInterval();
+        controller.startController();
+        // Get the current scene
+        Scene currentScene = ((Node) event.getSource()).getScene();
+
+        // Replace the root node of the current scene with the new root node
+        currentScene.setRoot(newRoot);
+
+    }
 
 
+    @FXML
+    void resetTestA(ActionEvent event) throws IOException, ClassNotFoundException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/modelo/vistaStart.fxml"));
+
+        Parent newRoot = loader.load();
+
+//        Controlador controller = loader.getController();
+
+        // Call a method on the new controller
+        // controller.randomInterval();
+//        controller.startController();
+        // Get the current scene
+        Scene currentScene = ((Node) event.getSource()).getScene();
+
+        // Replace the root node of the current scene with the new root node
+        currentScene.setRoot(newRoot);
+    }
+
+    public ImageView getImgFinal() {
+        return imgFinal;
+    }
+
+    public void setImgFinal(ImageView imgFinal) {
+        this.imgFinal = imgFinal;
+    }
 }

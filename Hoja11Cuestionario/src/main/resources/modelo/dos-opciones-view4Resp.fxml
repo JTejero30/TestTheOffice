@@ -5,29 +5,36 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<FlowPane alignment="TOP_CENTER" maxHeight="638.0" maxWidth="-Infinity" minHeight="400.0" minWidth="400.0" prefHeight="560.0" prefWidth="801.0" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.Controlador">
+<FlowPane fx:id="mainFlowPain" alignment="TOP_CENTER" maxHeight="638.0" maxWidth="-Infinity" minHeight="400.0" minWidth="400.0" prefHeight="616.0" prefWidth="880.0" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.Controlador">
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="562.0" prefWidth="792.0" styleClass="vBoxPrincipal">
+      <VBox fx:id="mainVbox" alignment="TOP_CENTER" prefHeight="618.0" prefWidth="881.0" styleClass="vBoxPrincipal">
          <children>
-            <Pane prefHeight="37.0" prefWidth="511.0" styleClass="top" />
-            <StackPane prefHeight="85.0" prefWidth="651.0" styleClass="PanePregunta">
+            <StackPane alignment="CENTER_LEFT" maxHeight="110.0" minHeight="110.0" prefHeight="110.0" prefWidth="651.0" styleClass="PanePregunta">
                <children>
-                  <Text fx:id="preguntaid" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Cpregunta" text="Pregunta" wrappingWidth="764.402946472168">
+                  <Text fx:id="preguntaid" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Cpregunta" text="Pregunta" wrappingWidth="745.064811706543">
                      <font>
-                        <Font name="Copperplate Gothic Light" size="31.0" />
-                     </font></Text>
+                        <Font name="Rockwell Condensed" size="30.0" />
+                     </font>
+                     <StackPane.margin>
+                        <Insets left="30.0" />
+                     </StackPane.margin>
+                  </Text>
                </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </StackPane>
             <VBox fx:id="VboxContainer" alignment="CENTER" maxWidth="652.0" prefHeight="263.0" prefWidth="652.0">
                <VBox.margin>
@@ -46,7 +53,7 @@
                      <children>
                         <StackPane prefHeight="50.0" prefWidth="247.0" styleClass="cardBorder" GridPane.hgrow="NEVER">
                            <children>
-                              <ToggleButton fx:id="resp1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0" prefWidth="244.0" styleClass="buttonResp" text="ToggleButton" wrapText="true">
+                              <ToggleButton fx:id="resp1" mnemonicParsing="false" prefHeight="26.0" prefWidth="233.0" styleClass="buttonResp" text="ToggleButton" wrapText="true">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="toogleGroup" />
                                  </toggleGroup>
@@ -55,13 +62,13 @@
                         </StackPane>
                         <StackPane prefHeight="150.0" prefWidth="200.0" styleClass="cardBorder" GridPane.columnIndex="1" GridPane.hgrow="NEVER">
                            <children>
-                              <ToggleButton fx:id="resp2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="buttonResp" text="ToggleButton" toggleGroup="$toogleGroup" wrapText="true" />
+                              <ToggleButton fx:id="resp2" mnemonicParsing="false" prefHeight="26.0" prefWidth="233.0" styleClass="buttonResp" text="ToggleButton" toggleGroup="$toogleGroup" wrapText="true" />
 
                            </children>
                         </StackPane>
                         <StackPane maxHeight="1.7976931348623157E308" prefHeight="150.0" prefWidth="200.0" styleClass="cardBorder" GridPane.hgrow="NEVER" GridPane.rowIndex="1">
                            <children>
-                              <ToggleButton fx:id="resp3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="buttonResp" text="ToggleButton" toggleGroup="$toogleGroup" wrapText="true" />
+                              <ToggleButton fx:id="resp3" mnemonicParsing="false" prefHeight="26.0" prefWidth="233.0" styleClass="buttonResp" text="ToggleButton" toggleGroup="$toogleGroup" wrapText="true" />
 
                            </children>
                         </StackPane>
@@ -81,7 +88,7 @@
                      <children>
                         <StackPane prefHeight="150.0" prefWidth="200.0" styleClass="cardBorder">
                            <children>
-                              <ToggleButton fx:id="si" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" styleClass="buttonResp" text="ToggleButton">
+                              <ToggleButton fx:id="si" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" styleClass="buttonResp" text="ToggleButton">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="YN" />
                                  </toggleGroup>
@@ -90,7 +97,7 @@
                         </StackPane>
                         <StackPane prefHeight="150.0" prefWidth="200.0" styleClass="cardBorder">
                            <children>
-                              <ToggleButton fx:id="no" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="buttonResp" text="ToggleButton" toggleGroup="$YN" />
+                              <ToggleButton fx:id="no" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="buttonResp" text="ToggleButton" toggleGroup="$YN" />
                            </children>
                         </StackPane>
                      </children>
@@ -98,7 +105,7 @@
 
 
 
-                  <GridPane fx:id="VBoxImg" alignment="TOP_CENTER" hgap="20.0" maxHeight="305.0" maxWidth="640.0" minHeight="305.0" minWidth="640.0" prefHeight="305.0" prefWidth="640.0" styleClass="respuestasGridPane" vgap="20.0">
+                  <GridPane fx:id="VBoxImg" alignment="TOP_CENTER" hgap="20.0" maxHeight="305.0" maxWidth="655.0" minHeight="305.0" minWidth="593.0" prefHeight="305.0" prefWidth="613.0" styleClass="respuestasGridPane" vgap="20.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
@@ -110,7 +117,7 @@
                      <children>
                         <StackPane prefHeight="150.0" prefWidth="200.0" styleClass="cardBorder">
                            <children>
-                              <ToggleButton fx:id="btn1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="182.0" prefWidth="322.0" styleClass="buttonImg">
+                              <ToggleButton fx:id="btn1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="143.0" prefWidth="237.0" styleClass="buttonImg">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="btnGroup" />
                                  </toggleGroup>
@@ -142,6 +149,28 @@
                   <Button fx:id="siguientePregunta" mnemonicParsing="false" onAction="#siguientePregunta" styleClass="buttonSiguiente" text="Siguiente" />
                </buttons>
             </ButtonBar>
+
+
+
+         </children>
+      </VBox>
+      <VBox fx:id="paneFinal" alignment="CENTER" prefHeight="620.0" prefWidth="884.0" spacing="40.0" styleClass="paneImagenFin">
+         <children>
+            <ImageView fx:id="imgFinal" fitHeight="342.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@fondoFin.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="textoGanador" strokeType="OUTSIDE" strokeWidth="0.0" text="Personaje nombre">
+               <font>
+                  <Font name="Rockwell Condensed" size="45.0" />
+               </font>
+            </Text>
+            <Button mnemonicParsing="false" onAction="#resetTestA" prefHeight="56.0" prefWidth="444.0" styleClass="buttonSiguiente" text="Reiniciar test">
+               <font>
+                  <Font name="Rockwell" size="29.0" />
+               </font>
+            </Button>
          </children>
       </VBox>
    </children>
