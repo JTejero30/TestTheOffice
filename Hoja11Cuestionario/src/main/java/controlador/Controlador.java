@@ -330,17 +330,16 @@ public class Controlador {
         try {
             listaResult = ContolBD.hacerUnionDeConsulta(Transformar.selectRs4(listaPreguntasRandom.get(numeroPreguntaArrayListRandom)));
 
-            String string1 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(1) + ".jpg";
-            String string2 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(2) + ".jpg";
-            String string3 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(3) + ".jpg";
-            String string4 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(4) + ".jpg";
-            System.out.println(string1);
+//            String string1 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(1) + ".jpg";
+//            String string2 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(2) + ".jpg";
+//            String string3 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(3) + ".jpg";
+//            String string4 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(4) + ".jpg";
+//            System.out.println(string1);
 
-//            String string1 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
-//            String string2 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
-//            String string3 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
-//            String string4 = " C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/granja.jpg";
-
+             String string1 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(1) + ".jpg";
+            String string2 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(2) + ".jpg";
+            String string3 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(3) + ".jpg";
+            String string4 = "C:/Users/javit/IdeaProjects/TheOffice/TestTheOffice/Hoja11Cuestionario/img/" + listaResult.get(4) + ".jpg";
 
 
             Image image1 = new Image(string1);
