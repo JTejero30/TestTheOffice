@@ -155,11 +155,7 @@ public class Controlador {
         int min = 1; // valor minimo
         int max = 18; // valor maximo of the interval, hay que hacerlo automatico
         int size = numPreguntas; // tamaño de la lista
-        //ArrayList<Integer> prueba = new ArrayList<>();
         ArrayList<Integer> listaPreguntasRandomL = new ArrayList<>();
-
-        //prueba.add(9);
-
 
         Random random = new Random();
         while (listaPreguntasRandomL.size() < size) {
@@ -168,7 +164,6 @@ public class Controlador {
                 listaPreguntasRandomL.add(number);
             }
         }
-        //listaPreguntasRandom = prueba;
         listaPreguntasRandom = listaPreguntasRandomL;
     }
 
@@ -199,7 +194,6 @@ public class Controlador {
             mainFlowPain.getChildren().add(removeNodePaneFinal);
             String string1 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/gif/" +calcularPersonaje() + ".gif";
 
-//            String string1 = "C:/Users/evill/OneDrive - IMF Smart Education/Nueva carpeta/TestTheOffice/Hoja11Cuestionario/img/agua.jpg";
 
             Image image1 = new Image(string1);
 
@@ -207,14 +201,8 @@ public class Controlador {
 
             imgFinal.setImage(image1);
 
-            // Change the FXML element in the new view
-
-
             textoGanador.setText(calcularPersonaje());
 
-
-            ContolBD.ejecutar("DELETE FROM personajes");
-            //System.out.println("Eres" + personajeGanador);
 
         } else {
             comprobarClickado();
@@ -327,8 +315,6 @@ public class Controlador {
         int tipoPregunta = ContolBD.verTipoPregunta(Transformar.tipoPregunta(listaPreguntasRandom.get(numeroPreguntaArrayListRandom)));
         ArrayList<String> listaResult;
         inicializarBotones();
-        //preguntaid.setFont(customFont);
-
 
         try {
             listaResult = ContolBD.hacerUnionDeConsulta(Transformar.selectRs4(listaPreguntasRandom.get(numeroPreguntaArrayListRandom)));
@@ -471,6 +457,8 @@ public class Controlador {
         // Call a method on the new controller
         controller.randomInterval();
         controller.startController();
+
+        ContolBD.ejecutar("DELETE FROM personajes");
         // Get the current scene
         Scene currentScene = ((Node) event.getSource()).getScene();
 

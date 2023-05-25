@@ -14,7 +14,7 @@ public class Application extends javafx.application.Application {
         FXMLLoader fxmlLoader = new FXMLLoader(modelo.Application.class.getResource("vistaStart.fxml"));
         System.out.println(fxmlLoader);
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
+        stage.setTitle("TheOffice");
 
         //Controlador controller = fxmlLoader.getController();
 //        controller.randomInterval();
